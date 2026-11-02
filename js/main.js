@@ -44,6 +44,7 @@ const COPY = {
     "sponsorCtaTitle": "Every little bit counts",
     "sponsorCtaBody": "Donations of time, money, items or skills help fund places in our programmes for the young people who need them most.",
     "sponsorCta": "Offer your support",
+    // Scrolling banner: change the wording here (and in "mi" below). index.html picks it up.
     "banner": "Lessons now open · Only 2 spots left · Mondays 4pm–6pm",
     "bannerCta": "Book now"
   },
@@ -187,7 +188,32 @@ function setupProgrammeLinks() {
   });
 }
 
+// ---------- Scrolling banner ----------
+// index.html holds one banner item; repeat it to fill the strip. The animation slides the strip
+// left by half its width, so it needs an even number of identical copies.
+function setupBanner() {
+  const banner = document.querySelector('.banner');
+  if (!banner) return;
+  const track = banner.querySelector('.marquee-track');
+  const item = track.querySelector('.marquee-item');
+  for (let i = 1; i < 8; i++) track.appendChild(item.cloneNode(true));
+
+  // pause / play, remembered between visits
+  const toggle = banner.querySelector('.banner-toggle');
+  const setPaused = (paused) => {
+    banner.classList.toggle('is-paused', paused);
+    toggle.setAttribute('aria-pressed', String(paused));
+    try { localStorage.setItem('shq-banner-paused', paused ? '1' : '0'); } catch (e) { /* ignore */ }
+  };
+  let paused = false;
+  try { paused = localStorage.getItem('shq-banner-paused') === '1'; } catch (e) { /* ignore */ }
+  setPaused(paused);
+  toggle.hidden = false;
+  toggle.addEventListener('click', () => setPaused(toggle.getAttribute('aria-pressed') !== 'true'));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  setupBanner();
   setupNav();
   setupProgrammeLinks();
   document.querySelectorAll('.lang-btn').forEach((btn) => {
@@ -195,5 +221,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   let saved = 'en';
   try { saved = localStorage.getItem('shq-lang') || 'en'; } catch (e) { /* ignore */ }
-  if (saved !== 'en') setLanguage(saved);
+  // always apply, so the banner and every other translated string come from COPY above
+  setLanguage(saved);
 });

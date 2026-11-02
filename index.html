@@ -57,50 +57,24 @@
 
 <!-- BANNER + NAV -->
 <header style="position: sticky; top: 0; z-index: 10; background: rgba(243,242,236,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid #DAD8CE">
-<a href="#contact" class="marquee" data-programme="equiNZone After School"aria-label="Lessons now open · Only 2 spots left · Mondays 4pm–6pm" data-i18n-aria-label="banner" style="display: block; overflow: hidden; background: #0F7A82; color: #FFFFFF; text-decoration: none">
-<div class="marquee-track" aria-hidden="true" style="display: flex; width: max-content">
-<span style="display: inline-flex; align-items: center; gap: 12px; padding: 11px 28px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap">
+<!-- Scrolling banner. The wording lives in one place: "banner" and "bannerCta" in js/main.js.
+     main.js repeats this item to fill the strip; the text here is only a fallback if JavaScript is off. -->
+<div class="banner">
+<a href="#contact" class="marquee" data-programme="equiNZone After School" aria-label="Lessons now open · Only 2 spots left · Mondays 4pm–6pm" data-i18n-aria-label="banner">
+<span class="marquee-track" aria-hidden="true">
+<span class="marquee-item">
 <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4"></path></svg>
-<span><span data-i18n="banner">Lessons now open · Only 2 spots left · Mondays 4pm–6pm</span></span>
-<span style="text-decoration: underline; text-underline-offset: 3px"><span data-i18n="bannerCta">Book now</span></span>
+<span data-i18n="banner">Lessons now open · Only 2 spots left · Mondays 4pm–6pm</span>
+<span class="marquee-cta" data-i18n="bannerCta">Book now</span>
 </span>
-<span style="display: inline-flex; align-items: center; gap: 12px; padding: 11px 28px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap">
-<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4"></path></svg>
-<span><span data-i18n="banner">Lessons now open · Only 2 spots left · Mondays 4pm–6pm</span></span>
-<span style="text-decoration: underline; text-underline-offset: 3px"><span data-i18n="bannerCta">Book now</span></span>
 </span>
-<span style="display: inline-flex; align-items: center; gap: 12px; padding: 11px 28px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap">
-<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4"></path></svg>
-<span><span data-i18n="banner">Lessons now open · Only 2 spots left · Mondays 4pm–6pm</span></span>
-<span style="text-decoration: underline; text-underline-offset: 3px"><span data-i18n="bannerCta">Book now</span></span>
-</span>
-<span style="display: inline-flex; align-items: center; gap: 12px; padding: 11px 28px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap">
-<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4"></path></svg>
-<span><span data-i18n="banner">Lessons now open · Only 2 spots left · Mondays 4pm–6pm</span></span>
-<span style="text-decoration: underline; text-underline-offset: 3px"><span data-i18n="bannerCta">Book now</span></span>
-</span>
-<span style="display: inline-flex; align-items: center; gap: 12px; padding: 11px 28px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap">
-<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4"></path></svg>
-<span><span data-i18n="banner">Lessons now open · Only 2 spots left · Mondays 4pm–6pm</span></span>
-<span style="text-decoration: underline; text-underline-offset: 3px"><span data-i18n="bannerCta">Book now</span></span>
-</span>
-<span style="display: inline-flex; align-items: center; gap: 12px; padding: 11px 28px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap">
-<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4"></path></svg>
-<span><span data-i18n="banner">Lessons now open · Only 2 spots left · Mondays 4pm–6pm</span></span>
-<span style="text-decoration: underline; text-underline-offset: 3px"><span data-i18n="bannerCta">Book now</span></span>
-</span>
-<span style="display: inline-flex; align-items: center; gap: 12px; padding: 11px 28px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap">
-<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4"></path></svg>
-<span><span data-i18n="banner">Lessons now open · Only 2 spots left · Mondays 4pm–6pm</span></span>
-<span style="text-decoration: underline; text-underline-offset: 3px"><span data-i18n="bannerCta">Book now</span></span>
-</span>
-<span style="display: inline-flex; align-items: center; gap: 12px; padding: 11px 28px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap">
-<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4"></path></svg>
-<span><span data-i18n="banner">Lessons now open · Only 2 spots left · Mondays 4pm–6pm</span></span>
-<span style="text-decoration: underline; text-underline-offset: 3px"><span data-i18n="bannerCta">Book now</span></span>
-</span>
-</div>
 </a>
+<button type="button" class="banner-toggle" aria-pressed="false" hidden>
+<span class="visually-hidden">Pause the scrolling banner</span>
+<svg class="icon-pause" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg>
+<svg class="icon-play" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"></path></svg>
+</button>
+</div>
 <nav aria-label="Main" class="site-nav">
 <a href="#top" class="brand">
 <img src="images/logo.jpg" alt="Shadowhawk Equine logo" width="48" height="48">

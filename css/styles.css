@@ -29,10 +29,35 @@ img { max-width: 100%; height: auto; }
 body{margin:0;background:var(--ground);font-family:var(--body)}
 h1, h2, h3 { font-family: var(--display); }
 a{color:#0F6E74}a:hover{color:#0A5257}
+/* ---------- Scrolling banner ---------- */
+.banner { position: relative; overflow: hidden; background: var(--banner); color: #FFFFFF; }
+.marquee { display: block; overflow: hidden; color: inherit; text-decoration: none; }
+.marquee:hover { color: #FFFFFF; }
+.marquee-track { display: flex; width: max-content; }
+.marquee-item {
+  display: inline-flex; align-items: center; gap: 12px; padding: 11px 28px;
+  font-size: 15px; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap;
+}
+.marquee-cta { text-decoration: underline; text-underline-offset: 3px; }
 @keyframes shq-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .marquee-track{animation:shq-marquee 30s linear infinite}
-.marquee:hover .marquee-track,.marquee:focus-visible .marquee-track{animation-play-state:paused}
+.marquee:hover .marquee-track,.marquee:focus-visible .marquee-track,.banner.is-paused .marquee-track{animation-play-state:paused}
 @media (prefers-reduced-motion: reduce){.marquee-track{animation:none}}
+/* pause / play button: required so visitors can stop content that keeps moving */
+.banner-toggle {
+  position: absolute; top: 0; right: 0; bottom: 0; width: 48px; padding: 0; border: 0;
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+  background: var(--banner); color: #FFFFFF; box-shadow: -18px 0 14px -4px var(--banner);
+}
+.banner-toggle .icon-play { display: none; }
+.banner-toggle[aria-pressed="true"] .icon-pause { display: none; }
+.banner-toggle[aria-pressed="true"] .icon-play { display: block; }
+/* nothing to pause when the visitor has asked for reduced motion */
+@media (prefers-reduced-motion: reduce) { .banner-toggle { display: none; } }
+/* on the teal strip, a white focus ring reads better than the teal one */
+.marquee:focus-visible, .banner-toggle:focus-visible { outline-color: #FFFFFF; outline-offset: -5px; }
+.marquee:focus-visible { box-shadow: none; }
+.banner-toggle:focus-visible { box-shadow: -18px 0 14px -4px var(--banner); }
 
 /* language toggle */
 .lang-btn {
