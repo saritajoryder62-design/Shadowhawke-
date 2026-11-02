@@ -18,7 +18,13 @@
 
 html { scroll-behavior: smooth; scroll-padding-top: 130px; }
 *, *::before, *::after { box-sizing: border-box; }
-img { max-width: 100%; }
+img { max-width: 100%; height: auto; }
+/* "hidden" must win over the inline display styles from the design export */
+[hidden] { display: none !important; }
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+}
 
 body{margin:0;background:var(--ground);font-family:var(--body)}
 h1, h2, h3 { font-family: var(--display); }
@@ -36,20 +42,120 @@ a{color:#0F6E74}a:hover{color:#0A5257}
 }
 .lang-btn.is-active { background: var(--pine); color: #FFFFFF; }
 
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-  outline: 3px solid #8FD3CD; outline-offset: 2px;
+/* Teal ring with a white gap: stays visible on the light page, the dark sections and the teal banner */
+:focus-visible {
+  outline: 3px solid var(--accent); outline-offset: 2px; box-shadow: 0 0 0 2px #FFFFFF;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
 
+/* ---------- Header nav ---------- */
+.site-nav {
+  position: relative; max-width: 1320px; margin: 0 auto; padding: 12px 24px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px;
+}
+.brand { flex: none; display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--pine); }
+.brand:hover { color: var(--pine); }
+.brand img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; background: #FFFFFF; border: 1px solid var(--line); }
+.brand-name { font-family: var(--display); font-weight: 600; font-size: 23px; line-height: 1; }
+.nav-menu { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; }
+.nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 26px; font-weight: 500; font-size: 16px; }
 /* nav links: hairline underline that draws in on hover */
 .nav-link {
+  padding: 10px 0; color: var(--pine); text-decoration: none; white-space: nowrap;
   background: linear-gradient(currentColor, currentColor) 0 calc(100% - 6px) / 0 1px no-repeat;
   transition: background-size 0.4s var(--ease-out);
 }
-.nav-link:hover, .nav-link:focus-visible { background-size: 100% 1px; }
+.nav-link:hover, .nav-link:focus-visible { color: var(--pine); background-size: 100% 1px; }
+.lang-toggle { flex: none; display: inline-flex; padding: 3px; border-radius: 999px; border: 1px solid #C9C7BC; background: #FFFFFF; }
+.lang-btn { white-space: nowrap; }
+.nav-cta {
+  flex: none; display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px;
+  background: var(--accent); color: #FFFFFF; text-decoration: none; font-weight: 600; white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+.nav-cta:hover { background: #0A5257; color: #FFFFFF; }
+
+.menu-toggle {
+  display: none; align-items: center; gap: 10px; min-height: 44px; padding: 0 16px 0 14px;
+  border: 1px solid #C9C7BC; border-radius: 999px; background: #FFFFFF; color: var(--pine);
+  font: inherit; font-size: 15px; font-weight: 600; cursor: pointer;
+}
+/* two lines that turn into a cross when the menu is open */
+.menu-toggle-icon { position: relative; width: 18px; height: 10px; }
+.menu-toggle-icon::before, .menu-toggle-icon::after {
+  content: ""; position: absolute; left: 0; width: 100%; height: 1.5px; border-radius: 2px; background: currentColor;
+  transition: translate 0.3s var(--ease-out), rotate 0.3s var(--ease-out);
+}
+.menu-toggle-icon::before { top: 0; }
+.menu-toggle-icon::after { bottom: 0; }
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon::before { translate: 0 4.25px; rotate: 45deg; }
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon::after { translate: 0 -4.25px; rotate: -45deg; }
+
+/* Compact nav: html.nav-compact is set before first paint on phones, and by js/main.js
+   whenever the full nav would wrap (e.g. the longer te reo labels on a laptop). */
+.nav-compact .site-nav { flex-wrap: nowrap; gap: 12px; }
+.nav-compact .brand { min-width: 0; gap: 10px; }
+.nav-compact .brand img { width: 44px; height: 44px; }
+.nav-compact .brand-name { font-size: clamp(19px, 5vw, 23px); }
+.nav-compact .menu-toggle { display: inline-flex; flex: none; }
+@media (max-width: 420px) { .nav-compact .site-nav { padding-inline: 20px; } }
+.nav-compact .nav-menu {
+  display: none; position: absolute; top: 100%; left: 0; right: 0;
+  flex-direction: column; align-items: stretch; gap: 20px;
+  max-height: calc(100svh - 140px); overflow-y: auto;
+  padding: 8px 24px 28px; background: var(--ground);
+  border-bottom: 1px solid var(--line); box-shadow: 0 28px 40px -28px rgba(22, 48, 42, 0.35);
+}
+.nav-compact .site-nav.is-open .nav-menu { display: flex; }
+.nav-compact .nav-links { flex-direction: column; align-items: stretch; gap: 0; font-size: 19px; }
+.nav-compact .nav-link { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); background: none; }
+.nav-compact .lang-toggle { align-self: flex-start; }
+.nav-compact .nav-cta { justify-content: center; min-height: 52px; }
+@media (prefers-reduced-motion: no-preference) {
+  .nav-compact .site-nav.is-open .nav-menu { animation: shq-menu 0.35s var(--ease-out); }
+}
+@keyframes shq-menu { from { opacity: 0; translate: 0 -8px; } }
+
+/* ---------- Programme cards: one enquire button each ---------- */
+.card-cta {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  min-height: 48px; margin-top: 6px; padding: 0 18px; border: 1px solid var(--pine); border-radius: 999px;
+  color: var(--pine); text-decoration: none; font-weight: 600; font-size: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.card-cta svg { transition: translate 0.4s var(--ease-out); }
+.card-cta:hover { background: var(--pine); color: #FFFFFF; }
+.card-cta:hover svg { translate: 4px 0; }
+
+/* ---------- FAQ ---------- */
+.faq { max-width: 1200px; margin: 0 auto; padding: 0 24px 104px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 32px 64px; align-items: start; }
+.faq-eyebrow { margin: 0 0 12px; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.faq-title { margin: 0; font-weight: 500; font-size: clamp(38px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.01em; }
+.faq-list { border-top: 1px solid var(--line); }
+.faq-list details { border-bottom: 1px solid var(--line); }
+.faq-list summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  min-height: 64px; padding: 16px 0; cursor: pointer; list-style: none;
+  font-family: var(--display); font-weight: 600; font-size: 23px; line-height: 1.25;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+/* plus that turns into a minus when open (replaces the default triangle) */
+.faq-list summary::after {
+  content: ""; flex: none; width: 14px; height: 14px;
+  background: linear-gradient(currentColor, currentColor) center / 100% 1.5px no-repeat,
+              linear-gradient(currentColor, currentColor) center / 1.5px 100% no-repeat;
+  transition: background-size 0.3s var(--ease-out);
+}
+.faq-list details[open] summary::after { background-size: 100% 1.5px, 1.5px 0; }
+.faq-list details p { margin: 0; padding: 0 48px 24px 0; max-width: 62ch; color: var(--muted); }
+@media (max-width: 760px) {
+  .faq { grid-template-columns: minmax(0, 1fr); padding-bottom: 88px; }
+  .faq-list summary { font-size: 21px; }
+  .faq-list details p { padding-right: 0; }
+}
 
 /* ---------- Hero ----------
    Editorial split layout. The photo column is sized close to the image's native

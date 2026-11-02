@@ -115,9 +115,81 @@ function setLanguage(lang) {
     btn.setAttribute('aria-pressed', String(active));
   });
   try { localStorage.setItem('shq-lang', lang); } catch (e) { /* storage blocked: ignore */ }
+  fitNav(); // te reo labels are longer, so the nav may need to collapse (or expand) again
+}
+
+// ---------- Header menu ----------
+// The full nav shows when it fits on one row. When it doesn't (phones, or te reo on a smaller
+// laptop) html gets the "nav-compact" class and the links move behind the Menu button.
+let fitNav = () => {};
+
+function setupNav() {
+  const root = document.documentElement;
+  const nav = document.querySelector('.site-nav');
+  if (!nav) return;
+  const toggle = nav.querySelector('.menu-toggle');
+  const menu = nav.querySelector('.nav-menu');
+
+  const isOpen = () => nav.classList.contains('is-open');
+  function setOpen(open) {
+    nav.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+  }
+
+  fitNav = () => {
+    root.classList.remove('nav-compact');
+    const items = [
+      nav.querySelector('.brand'),
+      ...menu.querySelector('.nav-links').children,
+      menu.querySelector('.lang-toggle'),
+      menu.querySelector('.nav-cta'),
+    ];
+    const middle = (el) => { const r = el.getBoundingClientRect(); return r.top + r.height / 2; };
+    const row = middle(items[0]);
+    const fits = items.every((el) => Math.abs(middle(el) - row) < 12);
+    root.classList.toggle('nav-compact', !fits);
+    if (fits) setOpen(false);
+  };
+
+  toggle.addEventListener('click', () => setOpen(!isOpen()));
+
+  // close after choosing a link, on Escape, or on a click anywhere outside the nav
+  menu.addEventListener('click', (e) => {
+    if (e.target.closest('a') && root.classList.contains('nav-compact')) setOpen(false);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen()) { setOpen(false); toggle.focus(); }
+  });
+  document.addEventListener('click', (e) => {
+    if (isOpen() && !nav.contains(e.target)) setOpen(false);
+  });
+
+  // only re-measure when the width changes (phones fire resize as the address bar hides)
+  let lastWidth = window.innerWidth;
+  window.addEventListener('resize', () => {
+    if (window.innerWidth === lastWidth) return;
+    lastWidth = window.innerWidth;
+    requestAnimationFrame(fitNav);
+  });
+  if (document.fonts) document.fonts.ready.then(fitNav);
+  fitNav();
+}
+
+// ---------- Enquire / Book buttons pre-select the programme in the contact form ----------
+function setupProgrammeLinks() {
+  const select = document.getElementById('f-type');
+  if (!select) return;
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('[data-programme]');
+    if (!link) return;
+    const match = [...select.options].find((option) => option.value === link.dataset.programme);
+    if (match) select.value = match.value;
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  setupNav();
+  setupProgrammeLinks();
   document.querySelectorAll('.lang-btn').forEach((btn) => {
     btn.addEventListener('click', () => setLanguage(btn.dataset.setLang));
   });
