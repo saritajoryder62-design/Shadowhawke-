@@ -17,9 +17,12 @@ Open the Claude Code panel in VS Code with this folder open. `CLAUDE.md` is pick
 ## Files
 
 | Path | What it is |
-|---|---|
-| `index.html` | The page |
-| `css/styles.css` | Colours, banner animation, hero background, toggle |
-| `js/main.js` | English / Te Reo Māori text and the toggle |
+| --- | --- |
+| `index.html` | The page (no inline styles: every element uses classes from `css/styles.css`) |
+| `thanks.html` | Shown after the enquiry form is sent |
+| `404.html` | Shown by Netlify for any address that doesn't exist |
+| `css/styles.css` | All styling: colour tokens at the top, then one section per part of the page |
+| `js/main.js` | English / Te Reo Māori text (including the scrolling banner), the toggle, the phone menu |
 | `images/` | Photos, logo, supporter logos |
-| `CLAUDE.md` | Task list and project notes for Claude Code |
+| `netlify.toml`, `robots.txt` | Netlify settings and search-engine rules |
+| `CLAUDE.md` | Task list and project notes for Claude Code (kept on your computer only, not in git) |

@@ -53,11 +53,11 @@
 <script src="js/main.js" defer></script>
 </head>
 <body>
-<div class="page" style="font-family: var(--body); color: #16302A; background: #F3F2EC; font-size: 17px; line-height: 1.6; width: 100%; min-width: 0">
+<div class="page">
 <a href="#main" class="skip-link">Skip to content</a>
 
 <!-- BANNER + NAV -->
-<header style="position: sticky; top: 0; z-index: 10; background: rgba(243,242,236,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid #DAD8CE">
+<header class="site-header">
 <!-- Scrolling banner. The wording lives in one place: "banner" and "bannerCta" in js/main.js.
      main.js repeats this item to fill the strip; the text here is only a fallback if JavaScript is off. -->
 <div class="banner">
@@ -126,188 +126,188 @@
 </section>
 
 <!-- MISSION BAND -->
-<section aria-label="Our purpose" style="background: #16302A; color: #F3F2EC">
-<div data-reveal style="max-width: 1200px; margin: 0 auto; padding: 80px 24px; display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: flex-start">
-<p style="margin: 0; flex: 0 1 200px; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8FD3CD"><span data-i18n="purpose">Our purpose</span></p>
-<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 32px">
-<p style="margin: 0; font-family: var(--display); font-weight: 600; font-size: clamp(26px, 3vw, 38px); line-height: 1.25; letter-spacing: -0.015em"><span data-i18n="mission">“To foster holistic growth and healing through the transformative connection between horses and people.”</span></p>
-<p style="margin: 0; font-size: 18px; color: #B9C7C1; max-width: 60ch">A safe, nurturing space, especially for young people, supporting mental, physical, emotional and spiritual wellbeing.</p>
-<figure style="margin: 0; padding-top: 28px; border-top: 1px solid #2D4A42; display: flex; flex-direction: column; gap: 6px">
-<blockquote lang="mi" style="margin: 0; font-family: var(--display); font-weight: 600; font-size: 22px; color: #8FD3CD">“Whakatau i te wairua, kia ako ki te tū hei raukura mō tō iwi.”</blockquote>
-<figcaption style="font-size: 16px; color: #B9C7C1">Calm the spirit, learn to stand as a leader for your people.</figcaption>
+<section class="band-dark" aria-label="Our purpose">
+<div class="purpose-inner" data-reveal>
+<p class="purpose-label"><span data-i18n="purpose">Our purpose</span></p>
+<div class="purpose-body">
+<p class="purpose-quote"><span data-i18n="mission">“To foster holistic growth and healing through the transformative connection between horses and people.”</span></p>
+<p class="purpose-text">A safe, nurturing space, especially for young people, supporting mental, physical, emotional and spiritual wellbeing.</p>
+<figure class="whakatauki">
+<blockquote class="whakatauki-text" lang="mi">“Whakatau i te wairua, kia ako ki te tū hei raukura mō tō iwi.”</blockquote>
+<figcaption class="whakatauki-translation">Calm the spirit, learn to stand as a leader for your people.</figcaption>
 </figure>
 </div>
 </div>
 </section>
 
 <!-- PROGRAMMES -->
-<section id="programmes" style="max-width: 1200px; margin: 0 auto; padding: 104px 24px 96px; display: flex; flex-direction: column; gap: 48px">
-<div data-reveal style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 48px">
-<div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0F6E74"><span data-i18n="offer">What we offer</span></p>
-<h2 style="margin: 0; font-family: var(--display); font-weight: 500; font-size: clamp(38px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.01em"><span data-i18n="offerTitle">Programmes that grow confidence and connection</span></h2>
+<section class="programmes" id="programmes">
+<div class="section-head" data-reveal>
+<div class="section-head-title">
+<p class="eyebrow"><span data-i18n="offer">What we offer</span></p>
+<h2 class="section-title"><span data-i18n="offerTitle">Programmes that grow confidence and connection</span></h2>
 </div>
-<p style="margin: 0; flex: 1 1 340px; color: #4A5A54; max-width: 46ch">Trauma-informed, equine-assisted programmes that build responsibility, emotional regulation, self-awareness, trust, confidence and leadership, at each person’s own pace.</p>
+<p class="section-head-text">Trauma-informed, equine-assisted programmes that build responsibility, emotional regulation, self-awareness, trust, confidence and leadership, at each person’s own pace.</p>
 </div>
-<div data-reveal-group style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr)); gap: 20px">
+<div class="programme-grid" data-reveal-group>
 
-<article style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid #E4E2D8">
-<img width="310" height="311" loading="lazy" decoding="async" src="images/pony-lesson.jpg" alt="A young rider on a skewbald pony" style="width: 100%; height: 200px; object-fit: cover">
-<div style="padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1">
-<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0F6E74">Riding school · Where it began</p>
-<h3 style="margin: 0; font-family: var(--display); font-weight: 700; font-size: 23px; letter-spacing: -0.01em">equiNZone After School</h3>
-<p style="margin: 0; color: #4A5A54; font-size: 16px">All experience levels welcome. Every rider gets an individual learning plan and certificates as they progress.</p>
-<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 15px">
+<article class="programme-card">
+<img class="programme-card-img" width="310" height="311" loading="lazy" decoding="async" src="images/pony-lesson.jpg" alt="A young rider on a skewbald pony">
+<div class="programme-card-body">
+<p class="card-tag">Riding school · Where it began</p>
+<h3 class="programme-card-title">equiNZone After School</h3>
+<p class="card-text">All experience levels welcome. Every rider gets an individual learning plan and certificates as they progress.</p>
+<ul class="programme-facts">
 <li><strong>When:</strong> Mon–Fri, 3:30–5:30pm, school terms</li>
 <li><strong>Ages:</strong> 8+</li>
 <li><strong>Group:</strong> 5–6 riders, 2 instructors</li>
 <li><strong>Gear:</strong> supplied</li>
 </ul>
-<div style="margin-top: auto; padding-top: 14px; border-top: 1px solid #E4E2D8; display: flex; justify-content: space-between; align-items: baseline; gap: 8px">
-<span style="font-family: var(--display); font-weight: 600; font-size: 30px; font-variant-numeric: lining-nums">$50</span>
-<span style="font-size: 14px; color: #4A5A54">+ $10 pick-up &amp; drop-off</span>
+<div class="programme-price-row">
+<span class="programme-price">$50</span>
+<span class="small-muted">+ $10 pick-up &amp; drop-off</span>
 </div>
 <a href="#contact" class="card-cta" data-programme="equiNZone After School">Enquire<span class="visually-hidden"> about equiNZone After School</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </article>
 
-<article style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid #E4E2D8">
-<img width="625" height="550" loading="lazy" decoding="async" src="images/paddock-roundup.jpg" alt="Riders leading horses across a paddock" style="width: 100%; height: 200px; object-fit: cover; object-position: center 60%">
-<div style="padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1">
-<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0F6E74">School holidays</p>
-<h3 style="margin: 0; font-family: var(--display); font-weight: 700; font-size: 23px; letter-spacing: -0.01em">Break Away Camps</h3>
-<p style="margin: 0; color: #4A5A54; font-size: 16px">A week of horses, swimming, games and art, with helpers and two camp coordinators.</p>
-<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 15px">
+<article class="programme-card">
+<img class="programme-card-img obj-pos-60" width="625" height="550" loading="lazy" decoding="async" src="images/paddock-roundup.jpg" alt="Riders leading horses across a paddock">
+<div class="programme-card-body">
+<p class="card-tag">School holidays</p>
+<h3 class="programme-card-title">Break Away Camps</h3>
+<p class="card-text">A week of horses, swimming, games and art, with helpers and two camp coordinators.</p>
+<ul class="programme-facts">
 <li><strong>When:</strong> Mon–Fri, 9am–4pm</li>
 <li><strong>Ages:</strong> 11+</li>
 <li><strong>Group:</strong> max 10</li>
 <li><strong>Next:</strong> Summer camp, dates TBC</li>
 </ul>
-<div style="margin-top: auto; padding-top: 14px; border-top: 1px solid #E4E2D8; display: flex; justify-content: space-between; align-items: baseline; gap: 8px">
-<span style="font-family: var(--display); font-weight: 600; font-size: 30px; font-variant-numeric: lining-nums">$400</span>
-<span style="font-size: 14px; color: #4A5A54">per person, per week</span>
+<div class="programme-price-row">
+<span class="programme-price">$400</span>
+<span class="small-muted">per person, per week</span>
 </div>
 <a href="#contact" class="card-cta" data-programme="Break Away Camps">Enquire<span class="visually-hidden"> about Break Away Camps</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </article>
 
-<article style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid #E4E2D8">
-<img width="414" height="626" loading="lazy" decoding="async" src="images/rider-chestnut.jpg" alt="A rider on a chestnut horse with a white blaze" style="width: 100%; height: 200px; object-fit: cover; object-position: center 35%">
-<div style="padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1">
-<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0F6E74">Rangatahi · Ages 13–24</p>
-<h3 style="margin: 0; font-family: var(--display); font-weight: 700; font-size: 23px; letter-spacing: -0.01em">Hōtaka Rangatahi Youth Programme</h3>
-<p style="margin: 0; color: #4A5A54; font-size: 16px">Confidence, emotional regulation, leadership, resilience, communication, teamwork and identity. Includes breathwork, mindfulness and journaling.</p>
-<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 15px">
+<article class="programme-card">
+<img class="programme-card-img obj-pos-35" width="414" height="626" loading="lazy" decoding="async" src="images/rider-chestnut.jpg" alt="A rider on a chestnut horse with a white blaze">
+<div class="programme-card-body">
+<p class="card-tag">Rangatahi · Ages 13–24</p>
+<h3 class="programme-card-title">Hōtaka Rangatahi Youth Programme</h3>
+<p class="card-text">Confidence, emotional regulation, leadership, resilience, communication, teamwork and identity. Includes breathwork, mindfulness and journaling.</p>
+<ul class="programme-facts">
 <li><strong>Format:</strong> 10 sessions × 2 hours</li>
 <li><strong>Mix:</strong> 70% ground-based, 30% riding</li>
 </ul>
-<div style="margin-top: auto; padding-top: 14px; border-top: 1px solid #E4E2D8; display: flex; justify-content: space-between; align-items: baseline; gap: 8px">
-<span style="font-family: var(--display); font-weight: 600; font-size: 30px; font-variant-numeric: lining-nums">$1,800</span>
-<span style="font-size: 14px; color: #4A5A54">full programme</span>
+<div class="programme-price-row">
+<span class="programme-price">$1,800</span>
+<span class="small-muted">full programme</span>
 </div>
 <a href="#contact" class="card-cta" data-programme="Hōtaka Rangatahi Youth Programme">Enquire<span class="visually-hidden"> about the Hōtaka Rangatahi Youth Programme</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </article>
 
-<article style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid #E4E2D8">
-<img width="625" height="547" loading="lazy" decoding="async" src="images/herd-resting.jpg" alt="Two horses lying calmly in the grass" style="width: 100%; height: 200px; object-fit: cover">
-<div style="padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1">
-<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0F6E74">Tamariki · Rangatahi · Adults</p>
-<h3 style="margin: 0; font-family: var(--display); font-weight: 700; font-size: 23px; letter-spacing: -0.01em">Assuage Equine Therapy</h3>
-<p style="margin: 0; color: #4A5A54; font-size: 16px">To assuage is to soothe or relieve distress. Equine-assisted therapy focused on emotional regulation, confidence and connection.</p>
+<article class="programme-card">
+<img class="programme-card-img" width="625" height="547" loading="lazy" decoding="async" src="images/herd-resting.jpg" alt="Two horses lying calmly in the grass">
+<div class="programme-card-body">
+<p class="card-tag">Tamariki · Rangatahi · Adults</p>
+<h3 class="programme-card-title">Assuage Equine Therapy</h3>
+<p class="card-text">To assuage is to soothe or relieve distress. Equine-assisted therapy focused on emotional regulation, confidence and connection.</p>
 <!-- Waiting on Shadowhawk: fill in, then remove "hidden" -->
-<ul hidden style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 15px">
+<ul class="programme-facts" hidden>
 <li><strong>Format:</strong> [Session length]</li>
 <li><strong>Who:</strong> [Referral or self-referral?]</li>
 </ul>
-<div style="margin-top: auto; padding-top: 14px; border-top: 1px solid #E4E2D8; display: flex; justify-content: space-between; align-items: baseline; gap: 8px">
-<span style="font-family: var(--display); font-weight: 600; font-size: 26px">On enquiry</span>
+<div class="programme-price-row">
+<span class="programme-price-text">On enquiry</span>
 </div>
 <a href="#contact" class="card-cta" data-programme="Assuage Equine Therapy">Enquire<span class="visually-hidden"> about Assuage Equine Therapy</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </article>
 </div>
 
-<div data-reveal style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; padding: 20px 24px; border-radius: 4px; border: 1px dashed #A9B8B2">
-<span style="font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #0F6E74"><span data-i18n="comingSoon">In development</span></span>
-<span style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: 999px; background: #E7EFEC; font-size: 15px; font-weight: 600">Youth Development Programme</span>
-<span style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: 999px; background: #E7EFEC; font-size: 15px; font-weight: 600">Leadership Camps</span>
-<span style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: 999px; background: #E7EFEC; font-size: 15px; font-weight: 600">Facilitator Training</span>
-<span style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: 999px; background: #E7EFEC; font-size: 15px; font-weight: 600">Train the Trainer</span>
+<div class="coming-soon" data-reveal>
+<span class="coming-soon-label"><span data-i18n="comingSoon">In development</span></span>
+<span class="pill">Youth Development Programme</span>
+<span class="pill">Leadership Camps</span>
+<span class="pill">Facilitator Training</span>
+<span class="pill">Train the Trainer</span>
 </div>
 </section>
 
 <!-- STORY -->
-<section id="about" style="background: #E7EFEC">
-<div style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 56px">
-<div data-reveal style="flex: 1 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
-<img width="310" height="624" loading="lazy" decoding="async" src="images/philli.jpg" alt="Philli, a dark bay horse, in a rope halter" style="width: 100%; height: 440px; object-fit: cover; border-radius: 4px">
-<div style="display: flex; flex-direction: column; gap: 14px">
-<img width="206" height="206" loading="lazy" decoding="async" src="images/mare-foal.jpg" alt="A mare standing with her foal by the fence" style="width: 100%; height: 213px; object-fit: cover; border-radius: 4px">
-<img width="310" height="311" loading="lazy" decoding="async" src="images/inez.jpg" alt="Inez the foal standing beside her mother" style="width: 100%; height: 213px; object-fit: cover; border-radius: 4px">
+<section class="band-mist" id="about">
+<div class="story-inner">
+<div class="story-photos" data-reveal>
+<img class="story-photo-tall" width="310" height="624" loading="lazy" decoding="async" src="images/philli.jpg" alt="Philli, a dark bay horse, in a rope halter">
+<div class="stack-14">
+<img class="story-photo" width="206" height="206" loading="lazy" decoding="async" src="images/mare-foal.jpg" alt="A mare standing with her foal by the fence">
+<img class="story-photo" width="310" height="311" loading="lazy" decoding="async" src="images/inez.jpg" alt="Inez the foal standing beside her mother">
 </div>
 </div>
-<div data-reveal style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0F6E74"><span data-i18n="about">Our story</span></p>
-<h2 style="margin: 0; font-family: var(--display); font-weight: 500; font-size: clamp(38px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.01em"><span data-i18n="aboutTitle">Our untold story</span></h2>
-<p style="margin: 0; color: #2E423B">Our roots go back further than 2014, to working with one of Rotorua’s local youth camps. That experience sparked something, and Shadowhawk Equine was born.</p>
-<ol style="margin: 8px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0">
-<li style="display: flex; gap: 18px; padding: 14px 0; border-top: 1px solid #C8D6D0">
-<span style="flex: none; width: 92px; font-family: var(--display); font-weight: 600; font-size: 22px; font-variant-numeric: lining-nums; color: #0F6E74">2014</span>
-<span style="color: #2E423B">Established as a small, term-time riding school.</span>
+<div class="story-text" data-reveal>
+<p class="eyebrow"><span data-i18n="about">Our story</span></p>
+<h2 class="section-title"><span data-i18n="aboutTitle">Our untold story</span></h2>
+<p class="text-soft">Our roots go back further than 2014, to working with one of Rotorua’s local youth camps. That experience sparked something, and Shadowhawk Equine was born.</p>
+<ol class="timeline">
+<li class="timeline-item">
+<span class="timeline-year">2014</span>
+<span class="timeline-text">Established as a small, term-time riding school.</span>
 </li>
-<li style="display: flex; gap: 18px; padding: 14px 0; border-top: 1px solid #C8D6D0">
-<span style="flex: none; width: 92px; font-family: var(--display); font-weight: 600; font-size: 22px; font-variant-numeric: lining-nums; color: #0F6E74">Growing</span>
-<span style="color: #2E423B">More whānau joined, and holiday programmes followed.</span>
+<li class="timeline-item">
+<span class="timeline-year">Growing</span>
+<span class="timeline-text">More whānau joined, and holiday programmes followed.</span>
 </li>
-<li style="display: flex; gap: 18px; padding: 14px 0; border-top: 1px solid #C8D6D0">
-<span style="flex: none; width: 92px; font-family: var(--display); font-weight: 600; font-size: 22px; font-variant-numeric: lining-nums; color: #0F6E74">Listening</span>
-<span style="color: #2E423B">We saw a gap in support for young people’s emotional wellbeing, nervous-system regulation and real human connection, and chose to respond rather than step away.</span>
+<li class="timeline-item">
+<span class="timeline-year">Listening</span>
+<span class="timeline-text">We saw a gap in support for young people’s emotional wellbeing, nervous-system regulation and real human connection, and chose to respond rather than step away.</span>
 </li>
-<li style="display: flex; gap: 18px; padding: 14px 0; border-top: 1px solid #C8D6D0; border-bottom: 1px solid #C8D6D0">
-<span style="flex: none; width: 92px; font-family: var(--display); font-weight: 600; font-size: 22px; font-variant-numeric: lining-nums; color: #0F6E74">Today</span>
-<span style="color: #2E423B">With training in psychology, counselling and mental health, we blend equine-assisted therapy, mindfulness, breathwork and experiential learning for tamariki, rangatahi and adults.</span>
+<li class="timeline-item timeline-item--last">
+<span class="timeline-year">Today</span>
+<span class="timeline-text">With training in psychology, counselling and mental health, we blend equine-assisted therapy, mindfulness, breathwork and experiential learning for tamariki, rangatahi and adults.</span>
 </li>
 </ol>
-<blockquote style="margin: 8px 0 0; font-family: var(--display); font-weight: 600; font-size: 22px; line-height: 1.35; color: #16302A">“Horses are not tools. They are partners in learning and growth.”</blockquote>
+<blockquote class="story-quote">“Horses are not tools. They are partners in learning and growth.”</blockquote>
 </div>
 </div>
 </section>
 
 <!-- TEAM -->
-<section id="team" style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 48px">
-<div data-reveal style="display: flex; flex-direction: column; gap: 12px; max-width: 680px">
-<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0F6E74"><span data-i18n="trainers">Our team</span></p>
-<h2 style="margin: 0; font-family: var(--display); font-weight: 500; font-size: clamp(38px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.01em"><span data-i18n="trainersTitle">Meet Mercy & Natasha</span></h2>
-<p style="margin: 0; color: #4A5A54">The people behind Shadowhawk, with training in psychology, counselling and mental health alongside a lifetime with horses.</p>
+<section class="section-block" id="team">
+<div class="section-intro" data-reveal>
+<p class="eyebrow"><span data-i18n="trainers">Our team</span></p>
+<h2 class="section-title"><span data-i18n="trainersTitle">Meet Mercy & Natasha</span></h2>
+<p class="text-muted">The people behind Shadowhawk, with training in psychology, counselling and mental health alongside a lifetime with horses.</p>
 </div>
-<div data-reveal-group style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 24px">
-<article style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 24px; padding: 24px; border-radius: 6px; background: #FFFFFF; border: 1px solid #E4E2D8">
+<div class="team-grid" data-reveal-group>
+<article class="team-card">
 <!-- Waiting on Shadowhawk: swap for a real photo, then remove "hidden" -->
-<div hidden role="img" aria-label="Photo of Mercy Wallace (placeholder)" style="flex: 0 0 180px; height: 220px; border-radius: 4px; background: #DCEDEB; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #0F6E74">
+<div class="team-photo-placeholder" hidden role="img" aria-label="Photo of Mercy Wallace (placeholder)">
 <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg>
-<span style="font-size: 13px; font-weight: 600">[Photo]</span>
+<span class="team-photo-placeholder-label">[Photo]</span>
 </div>
-<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
-<h3 style="margin: 0; font-family: var(--display); font-weight: 700; font-size: 26px">Mercy Wallace</h3>
-<p hidden style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #0F6E74">[Role]</p>
-<ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 4px; color: #2E423B; font-size: 16px">
+<div class="team-card-body">
+<h3 class="card-title-lg">Mercy Wallace</h3>
+<p class="team-role" hidden>[Role]</p>
+<ul class="team-quals">
 <li>Certificate in Mental Health</li>
 <li>Certificate in Abnormal Behaviour Psychology</li>
 <li>Certificate in Criminal Psychology</li>
 </ul>
 </div>
 </article>
-<article style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 24px; padding: 24px; border-radius: 6px; background: #FFFFFF; border: 1px solid #E4E2D8">
+<article class="team-card">
 <!-- Waiting on Shadowhawk: swap for a real photo, then remove "hidden" -->
-<div hidden role="img" aria-label="Photo of Natasha Wallace (placeholder)" style="flex: 0 0 180px; height: 220px; border-radius: 4px; background: #DCEDEB; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #0F6E74">
+<div class="team-photo-placeholder" hidden role="img" aria-label="Photo of Natasha Wallace (placeholder)">
 <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg>
-<span style="font-size: 13px; font-weight: 600">[Photo]</span>
+<span class="team-photo-placeholder-label">[Photo]</span>
 </div>
-<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
-<h3 style="margin: 0; font-family: var(--display); font-weight: 700; font-size: 26px">Natasha Wallace</h3>
-<p hidden style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #0F6E74">[Role]</p>
-<ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 4px; color: #2E423B; font-size: 16px">
+<div class="team-card-body">
+<h3 class="card-title-lg">Natasha Wallace</h3>
+<p class="team-role" hidden>[Role]</p>
+<ul class="team-quals">
 <li>Certificate in Psychology &amp; Counselling</li>
 <li>Certificate in Adolescent Development Psychology</li>
 <li>Studying a Diploma in Family Wellness &amp; Crisis Intervention</li>
@@ -318,63 +318,63 @@
 </section>
 
 <!-- GALLERY -->
-<section id="gallery" aria-labelledby="gallery-title" style="max-width: 1200px; margin: 0 auto; padding: 0 24px 104px; display: flex; flex-direction: column; gap: 40px">
-<div data-reveal style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 48px">
-<div style="display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0F6E74"><span data-i18n="galleryEyebrow">Gallery</span></p>
-<h2 id="gallery-title" style="margin: 0; font-family: var(--display); font-weight: 500; font-size: clamp(38px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.01em"><span data-i18n="galleryTitle">Life at Shadowhawk</span></h2>
+<section class="gallery" id="gallery" aria-labelledby="gallery-title">
+<div class="section-head" data-reveal>
+<div class="heading-group">
+<p class="eyebrow"><span data-i18n="galleryEyebrow">Gallery</span></p>
+<h2 class="section-title" id="gallery-title"><span data-i18n="galleryTitle">Life at Shadowhawk</span></h2>
 </div>
-<a href="https://www.instagram.com/shadowhawkequine/" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; color: #0F6E74; text-decoration: none"><span data-i18n="galleryMore">More on Instagram</span> <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="text-link" href="https://www.instagram.com/shadowhawkequine/"><span data-i18n="galleryMore">More on Instagram</span> <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-<div data-reveal-group style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(3, clamp(120px, 17vw, 240px)); gap: 14px">
-<figure style="margin: 0; grid-column: 1 / 3; grid-row: 1 / 3; position: relative; border-radius: 4px; overflow: hidden"><img width="625" height="547" loading="lazy" decoding="async" src="images/herd-resting.jpg" alt="Two horses lying down together in a sunny paddock" style="width: 100%; height: 100%; object-fit: cover; display: block"><figcaption style="position: absolute; left: 14px; bottom: 14px; padding: 6px 12px; border-radius: 999px; background: rgba(22, 48, 42, 0.78); color: #FFFFFF; font-size: 14px; font-weight: 600">Two besties, soaking up the sun</figcaption></figure>
-<figure style="margin: 0; grid-column: 3 / 4; grid-row: 1 / 3; border-radius: 4px; overflow: hidden"><img width="503" height="687" loading="lazy" decoding="async" src="images/cowboy-horse.jpg" alt="A bay horse wearing a cowboy hat" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block"></figure>
-<figure style="margin: 0; grid-column: 4 / 5; grid-row: 1 / 2; border-radius: 4px; overflow: hidden"><img width="312" height="551" loading="lazy" decoding="async" src="images/phoenix.jpg" alt="Phoenix in a teal rope halter" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block"></figure>
-<figure style="margin: 0; grid-column: 4 / 5; grid-row: 2 / 3; border-radius: 4px; overflow: hidden"><img width="312" height="311" loading="lazy" decoding="async" src="images/inez-close.jpg" alt="Inez the foal nuzzling her mother" style="width: 100%; height: 100%; object-fit: cover; display: block"></figure>
-<figure style="margin: 0; grid-column: 1 / 3; grid-row: 3 / 4; position: relative; border-radius: 4px; overflow: hidden"><img width="625" height="550" loading="lazy" decoding="async" src="images/paddock-roundup.jpg" alt="Riders leading horses across the paddock" style="width: 100%; height: 100%; object-fit: cover; object-position: center 60%; display: block"><figcaption style="position: absolute; left: 14px; bottom: 14px; padding: 6px 12px; border-radius: 999px; background: rgba(22, 48, 42, 0.78); color: #FFFFFF; font-size: 14px; font-weight: 600">Time to round up the ponies</figcaption></figure>
-<figure style="margin: 0; grid-column: 3 / 4; grid-row: 3 / 4; border-radius: 4px; overflow: hidden"><img width="414" height="626" loading="lazy" decoding="async" src="images/rider-chestnut.jpg" alt="A rider on a chestnut horse with a white blaze" style="width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block"></figure>
-<figure style="margin: 0; grid-column: 4 / 5; grid-row: 3 / 4; border-radius: 4px; overflow: hidden"><img width="310" height="311" loading="lazy" decoding="async" src="images/pony-lesson.jpg" alt="An after-school pony lesson" style="width: 100%; height: 100%; object-fit: cover; display: block"></figure>
+<div class="gallery-grid" data-reveal-group>
+<figure class="gallery-item gallery-item--feature gallery-item--captioned"><img class="gallery-img" width="625" height="547" loading="lazy" decoding="async" src="images/herd-resting.jpg" alt="Two horses lying down together in a sunny paddock"><figcaption class="gallery-caption">Two besties, soaking up the sun</figcaption></figure>
+<figure class="gallery-item gallery-item--tall"><img class="gallery-img obj-pos-30" width="503" height="687" loading="lazy" decoding="async" src="images/cowboy-horse.jpg" alt="A bay horse wearing a cowboy hat"></figure>
+<figure class="gallery-item gallery-item--top-right"><img class="gallery-img obj-pos-30" width="312" height="551" loading="lazy" decoding="async" src="images/phoenix.jpg" alt="Phoenix in a teal rope halter"></figure>
+<figure class="gallery-item gallery-item--mid-right"><img class="gallery-img" width="312" height="311" loading="lazy" decoding="async" src="images/inez-close.jpg" alt="Inez the foal nuzzling her mother"></figure>
+<figure class="gallery-item gallery-item--wide gallery-item--captioned"><img class="gallery-img obj-pos-60" width="625" height="550" loading="lazy" decoding="async" src="images/paddock-roundup.jpg" alt="Riders leading horses across the paddock"><figcaption class="gallery-caption">Time to round up the ponies</figcaption></figure>
+<figure class="gallery-item gallery-item--bottom-mid"><img class="gallery-img obj-pos-35" width="414" height="626" loading="lazy" decoding="async" src="images/rider-chestnut.jpg" alt="A rider on a chestnut horse with a white blaze"></figure>
+<figure class="gallery-item gallery-item--bottom-right"><img class="gallery-img" width="310" height="311" loading="lazy" decoding="async" src="images/pony-lesson.jpg" alt="An after-school pony lesson"></figure>
 </div>
 </section>
 
 <!-- HERD -->
-<section id="herd" style="background: #16302A; color: #F3F2EC">
-<div style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 48px">
-<div data-reveal style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 48px">
-<div style="flex: 1 1 480px; display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8FD3CD"><span data-i18n="meetHerd">Meet the herd</span></p>
-<h2 style="margin: 0; font-family: var(--display); font-weight: 500; font-size: clamp(38px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.01em"><span data-i18n="herdTitle">Four legs, big personalities</span></h2>
+<section class="band-dark" id="herd">
+<div class="section-block">
+<div class="section-head" data-reveal>
+<div class="section-head-title section-head-title--narrow">
+<p class="eyebrow eyebrow--on-dark"><span data-i18n="meetHerd">Meet the herd</span></p>
+<h2 class="section-title"><span data-i18n="herdTitle">Four legs, big personalities</span></h2>
 </div>
-<p style="margin: 0; flex: 1 1 340px; color: #B9C7C1; max-width: 44ch">Our partners in learning and growth. Every horse here has their own character, and every rider soon has a favourite.</p>
+<p class="section-head-text section-head-text--on-dark">Our partners in learning and growth. Every horse here has their own character, and every rider soon has a favourite.</p>
 </div>
-<div data-reveal-group style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px">
-<article style="display: flex; flex-direction: column; gap: 14px">
-<img width="310" height="624" loading="lazy" decoding="async" src="images/philli.jpg" alt="Philli, a dark bay horse in a rope halter" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px">
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 style="margin: 0; font-family: var(--display); font-weight: 600; font-size: 24px">Philli</h3>
-<p hidden style="margin: 0; color: #B9C7C1; font-size: 16px">[Breed · age · what she’s like to ride]</p>
-</div>
-</article>
-<article style="display: flex; flex-direction: column; gap: 14px">
-<img width="312" height="551" loading="lazy" decoding="async" src="images/phoenix.jpg" alt="Phoenix, a chestnut horse with a white blaze, in a teal rope halter" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px">
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 style="margin: 0; font-family: var(--display); font-weight: 600; font-size: 24px">Phoenix</h3>
-<p hidden style="margin: 0; color: #B9C7C1; font-size: 16px">[Breed · age · what he’s like to ride]</p>
+<div class="herd-grid" data-reveal-group>
+<article class="stack-14">
+<img class="herd-img" width="310" height="624" loading="lazy" decoding="async" src="images/philli.jpg" alt="Philli, a dark bay horse in a rope halter">
+<div class="herd-card-text">
+<h3 class="herd-name">Philli</h3>
+<p class="herd-text" hidden>[Breed · age · what she’s like to ride]</p>
 </div>
 </article>
-<article style="display: flex; flex-direction: column; gap: 14px">
-<img width="310" height="311" loading="lazy" decoding="async" src="images/inez.jpg" alt="Inez, a chestnut foal, standing next to her mother" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px">
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 style="margin: 0; font-family: var(--display); font-weight: 600; font-size: 24px">Inez</h3>
-<p style="margin: 0; color: #B9C7C1; font-size: 16px">Our youngest. Turned one in October 2026 and growing into a beautiful horse.</p>
+<article class="stack-14">
+<img class="herd-img" width="312" height="551" loading="lazy" decoding="async" src="images/phoenix.jpg" alt="Phoenix, a chestnut horse with a white blaze, in a teal rope halter">
+<div class="herd-card-text">
+<h3 class="herd-name">Phoenix</h3>
+<p class="herd-text" hidden>[Breed · age · what he’s like to ride]</p>
 </div>
 </article>
-<article style="display: flex; flex-direction: column; gap: 14px">
-<img width="503" height="687" loading="lazy" decoding="async" src="images/cowboy-horse.jpg" alt="A bay horse wearing a cowboy hat" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; border-radius: 4px">
-<div style="display: flex; flex-direction: column; gap: 4px">
+<article class="stack-14">
+<img class="herd-img" width="310" height="311" loading="lazy" decoding="async" src="images/inez.jpg" alt="Inez, a chestnut foal, standing next to her mother">
+<div class="herd-card-text">
+<h3 class="herd-name">Inez</h3>
+<p class="herd-text">Our youngest. Turned one in October 2026 and growing into a beautiful horse.</p>
+</div>
+</article>
+<article class="stack-14">
+<img class="herd-img obj-pos-25" width="503" height="687" loading="lazy" decoding="async" src="images/cowboy-horse.jpg" alt="A bay horse wearing a cowboy hat">
+<div class="herd-card-text">
 <!-- Waiting on Shadowhawk: replace the title with this horse's name -->
-<h3 style="margin: 0; font-family: var(--display); font-weight: 600; font-size: 24px">The resident cowboy</h3>
-<p style="margin: 0; color: #B9C7C1; font-size: 16px">Reckons there are snacks in your pockets.</p>
+<h3 class="herd-name">The resident cowboy</h3>
+<p class="herd-text">Reckons there are snacks in your pockets.</p>
 </div>
 </article>
 </div>
@@ -382,26 +382,26 @@
 </section>
 
 <!-- FIRST LESSON -->
-<section aria-labelledby="first-lesson" style="max-width: 1200px; margin: 0 auto; padding: 104px 24px 88px; display: flex; flex-direction: column; gap: 40px">
-<div data-reveal style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
-<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0F6E74"><span data-i18n="newRider">New to equiNZone?</span></p>
-<h2 id="first-lesson" style="margin: 0; font-family: var(--display); font-weight: 500; font-size: clamp(38px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.01em"><span data-i18n="firstTitle">Your first lesson, step by step</span></h2>
+<section class="first-lesson" aria-labelledby="first-lesson">
+<div class="section-intro section-intro--narrow" data-reveal>
+<p class="eyebrow"><span data-i18n="newRider">New to equiNZone?</span></p>
+<h2 class="section-title" id="first-lesson"><span data-i18n="firstTitle">Your first lesson, step by step</span></h2>
 </div>
-<ol data-reveal-group style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px">
-<li style="background: #FFFFFF; border: 1px solid #E4E2D8; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-family: var(--display); font-weight: 800; font-size: 40px; line-height: 1; color: #0F6E74">01</span>
-<h3 style="margin: 0; font-family: var(--display); font-weight: 700; font-size: 22px">Let’s talk</h3>
-<p style="margin: 0; color: #4A5A54; font-size: 16px">Call, email or send the form below. Tell us about the rider and what you’re hoping for.</p>
+<ol class="steps" data-reveal-group>
+<li class="step">
+<span class="step-number">01</span>
+<h3 class="card-title">Let’s talk</h3>
+<p class="card-text">Call, email or send the form below. Tell us about the rider and what you’re hoping for.</p>
 </li>
-<li style="background: #FFFFFF; border: 1px solid #E4E2D8; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-family: var(--display); font-weight: 800; font-size: 40px; line-height: 1; color: #0F6E74">02</span>
-<h3 style="margin: 0; font-family: var(--display); font-weight: 700; font-size: 22px">Meet your horse</h3>
-<p style="margin: 0; color: #4A5A54; font-size: 16px">We match you with the right horse and start on the ground: grooming, leading and getting comfortable together.</p>
+<li class="step">
+<span class="step-number">02</span>
+<h3 class="card-title">Meet your horse</h3>
+<p class="card-text">We match you with the right horse and start on the ground: grooming, leading and getting comfortable together.</p>
 </li>
-<li style="background: #FFFFFF; border: 1px solid #E4E2D8; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-family: var(--display); font-weight: 800; font-size: 40px; line-height: 1; color: #0F6E74">03</span>
-<h3 style="margin: 0; font-family: var(--display); font-weight: 700; font-size: 22px">Grow at your pace</h3>
-<p style="margin: 0; color: #4A5A54; font-size: 16px">Gear is supplied. You get a learning plan and a certificate for each milestone. Wear closed-toe shoes and long pants.</p>
+<li class="step">
+<span class="step-number">03</span>
+<h3 class="card-title">Grow at your pace</h3>
+<p class="card-text">Gear is supplied. You get a learning plan and a certificate for each milestone. Wear closed-toe shoes and long pants.</p>
 </li>
 </ol>
 </section>
@@ -442,60 +442,60 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" style="max-width: 1200px; margin: 0 auto; padding: 0 24px 104px">
-<div data-reveal style="background: #FFFFFF; border: 1px solid #E4E2D8; border-radius: 6px; padding: clamp(28px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 48px 64px">
-<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
-<div style="display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0F6E74"><span data-i18n="contact">Contact</span></p>
-<h2 style="margin: 0; font-family: var(--display); font-weight: 500; font-size: clamp(36px, 4vw, 52px); line-height: 1.02; letter-spacing: -0.01em"><span data-i18n="contactTitle">Let’s talk</span></h2>
-<p style="margin: 0; color: #4A5A54">Kia ora! Questions about programmes, availability or the horses? We’d love to hear from you.</p>
+<section class="contact-section" id="contact">
+<div class="contact-card" data-reveal>
+<div class="contact-info">
+<div class="heading-group">
+<p class="eyebrow"><span data-i18n="contact">Contact</span></p>
+<h2 class="title-sm"><span data-i18n="contactTitle">Let’s talk</span></h2>
+<p class="text-muted">Kia ora! Questions about programmes, availability or the horses? We’d love to hear from you.</p>
 </div>
-<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 18px">
-<li style="display: flex; gap: 14px; align-items: flex-start">
-<span style="flex: none; width: 24px; height: 24px; margin-top: 2px; color: #0F6E74; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg></span>
-<div style="display: flex; flex-direction: column"><span style="font-size: 14px; color: #4A5A54">Phone</span><a href="tel:+6421628274" style="font-weight: 600; color: #16302A; text-decoration: none; font-size: 18px">021 628 274</a></div>
+<ul class="contact-list">
+<li class="contact-item">
+<span class="contact-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg></span>
+<div class="stack"><span class="small-muted">Phone</span><a class="contact-link" href="tel:+6421628274">021 628 274</a></div>
 </li>
-<li style="display: flex; gap: 14px; align-items: flex-start">
-<span style="flex: none; width: 24px; height: 24px; margin-top: 2px; color: #0F6E74; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></span>
-<div style="display: flex; flex-direction: column; min-width: 0"><span style="font-size: 14px; color: #4A5A54">Email</span><a href="mailto:shadowhawkequine@gmail.com" style="font-weight: 600; color: #16302A; text-decoration: none; font-size: 18px; overflow-wrap: anywhere">shadowhawkequine@gmail.com</a></div>
+<li class="contact-item">
+<span class="contact-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></span>
+<div class="stack min-w-0"><span class="small-muted">Email</span><a class="contact-link break-anywhere" href="mailto:shadowhawkequine@gmail.com">shadowhawkequine@gmail.com</a></div>
 </li>
-<li style="display: flex; gap: 14px; align-items: flex-start">
-<span style="flex: none; width: 24px; height: 24px; margin-top: 2px; color: #0F6E74; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg></span>
-<div style="display: flex; flex-direction: column"><span style="font-size: 14px; color: #4A5A54">Find us</span><span style="font-weight: 600; font-size: 18px">Te Ngae Road, Rotorua</span></div>
+<li class="contact-item">
+<span class="contact-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg></span>
+<div class="stack"><span class="small-muted">Find us</span><span class="contact-value">Te Ngae Road, Rotorua</span></div>
 </li>
-<li style="display: flex; gap: 14px; align-items: flex-start">
-<span style="flex: none; width: 24px; height: 24px; margin-top: 2px; color: #0F6E74; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
-<div style="display: flex; flex-direction: column"><span style="font-size: 14px; color: #4A5A54">equiNZone after school</span><span style="font-weight: 600; font-size: 18px">Mon–Fri, 3:30–5:30pm (school terms)</span></div>
+<li class="contact-item">
+<span class="contact-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+<div class="stack"><span class="small-muted">equiNZone after school</span><span class="contact-value">Mon–Fri, 3:30–5:30pm (school terms)</span></div>
 </li>
 </ul>
-<div style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #E4E2D8">
-<span style="font-size: 14px; color: #4A5A54"><span data-i18n="follow">Follow the herd</span></span>
-<div style="display: flex; flex-wrap: wrap; gap: 10px">
-<a href="https://www.facebook.com/shadowhawkequine/" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #16302A; color: #16302A; text-decoration: none; font-weight: 600; font-size: 15px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</a>
-<a href="https://www.instagram.com/shadowhawkequine/" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #16302A; color: #16302A; text-decoration: none; font-weight: 600; font-size: 15px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6"></circle></svg>Instagram</a>
-<a href="https://www.tiktok.com/@shadowhawk_equine" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #16302A; color: #16302A; text-decoration: none; font-weight: 600; font-size: 15px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"></path><path d="M14 3c.5 2.8 2.4 4.6 5 5"></path></svg>TikTok</a>
+<div class="contact-follow">
+<span class="small-muted"><span data-i18n="follow">Follow the herd</span></span>
+<div class="social-buttons">
+<a class="social-button" href="https://www.facebook.com/shadowhawkequine/"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</a>
+<a class="social-button" href="https://www.instagram.com/shadowhawkequine/"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6"></circle></svg>Instagram</a>
+<a class="social-button" href="https://www.tiktok.com/@shadowhawk_equine"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"></path><path d="M14 3c.5 2.8 2.4 4.6 5 5"></path></svg>TikTok</a>
 </div>
 </div>
 </div>
-<form name="enquiry" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" aria-label="Programme enquiry" style="flex: 1 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px">
+<form class="enquiry-form" name="enquiry" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" aria-label="Programme enquiry">
 <input type="hidden" name="form-name" value="enquiry">
 <input type="hidden" name="subject" data-remove-prefix value="New website enquiry: Shadowhawk Equine">
 <p hidden><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
-<label for="f-name" style="font-size: 15px; font-weight: 600">Your name</label>
-<input id="f-name" name="name" type="text" autocomplete="name" required style="min-height: 48px; padding: 0 14px; border: 1px solid #B9B7AC; border-radius: 4px; font: inherit; background: #FBFAF6; min-width: 0">
+<div class="field">
+<label class="field-label" for="f-name">Your name</label>
+<input class="field-control min-w-0" id="f-name" name="name" type="text" autocomplete="name" required>
 </div>
-<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
-<label for="f-phone" style="font-size: 15px; font-weight: 600">Phone <span class="field-optional">(optional)</span></label>
-<input id="f-phone" name="phone" type="tel" autocomplete="tel" style="min-height: 48px; padding: 0 14px; border: 1px solid #B9B7AC; border-radius: 4px; font: inherit; background: #FBFAF6; min-width: 0">
+<div class="field">
+<label class="field-label" for="f-phone">Phone <span class="field-optional">(optional)</span></label>
+<input class="field-control min-w-0" id="f-phone" name="phone" type="tel" autocomplete="tel">
 </div>
-<div style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px">
-<label for="f-email" style="font-size: 15px; font-weight: 600">Email</label>
-<input id="f-email" name="email" type="email" autocomplete="email" required style="min-height: 48px; padding: 0 14px; border: 1px solid #B9B7AC; border-radius: 4px; font: inherit; background: #FBFAF6">
+<div class="field-full">
+<label class="field-label" for="f-email">Email</label>
+<input class="field-control" id="f-email" name="email" type="email" autocomplete="email" required>
 </div>
-<div style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px">
-<label for="f-type" style="font-size: 15px; font-weight: 600">I’m interested in</label>
-<select id="f-type" name="programme" style="min-height: 48px; padding: 0 14px; border: 1px solid #B9B7AC; border-radius: 4px; font: inherit; background: #FBFAF6; color: #16302A">
+<div class="field-full">
+<label class="field-label" for="f-type">I’m interested in</label>
+<select class="field-control field-select" id="f-type" name="programme">
 <option>equiNZone After School</option>
 <option>Break Away Camps</option>
 <option>Hōtaka Rangatahi Youth Programme</option>
@@ -504,48 +504,48 @@
 <option>Something else</option>
 </select>
 </div>
-<div style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px">
-<label for="f-msg" style="font-size: 15px; font-weight: 600">Tell us a little more <span class="field-optional">(optional)</span></label>
-<textarea id="f-msg" name="message" rows="4" placeholder="Age, experience, anything we should know" style="padding: 12px 14px; border: 1px solid #B9B7AC; border-radius: 4px; font: inherit; background: #FBFAF6; resize: vertical"></textarea>
+<div class="field-full">
+<label class="field-label" for="f-msg">Tell us a little more <span class="field-optional">(optional)</span></label>
+<textarea class="field-textarea" id="f-msg" name="message" rows="4" placeholder="Age, experience, anything we should know"></textarea>
 </div>
-<button type="submit" style="grid-column: 1 / -1; justify-self: start; min-height: 52px; padding: 0 32px; border: 0; border-radius: 999px; background: var(--accent); color: #FFFFFF; font: inherit; font-weight: 600; cursor: pointer"><span data-i18n="send">Send enquiry</span></button>
+<button class="submit-button" type="submit"><span data-i18n="send">Send enquiry</span></button>
 </form>
 </div>
 </section>
 
 <!-- SUPPORTERS -->
-<section id="supporters" aria-labelledby="supporters-title" style="background: #E7EFEC">
-<div style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 40px">
-<div data-reveal style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 48px">
-<div style="display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0F6E74"><span data-i18n="sponsorEyebrow">Gratitude</span></p>
-<h2 id="supporters-title" style="margin: 0; font-family: var(--display); font-weight: 500; font-size: clamp(38px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.01em"><span data-i18n="sponsorTitle">Thanks to our supporters</span></h2>
+<section class="band-mist" id="supporters" aria-labelledby="supporters-title">
+<div class="supporters-inner">
+<div class="section-head" data-reveal>
+<div class="heading-group">
+<p class="eyebrow"><span data-i18n="sponsorEyebrow">Gratitude</span></p>
+<h2 class="section-title" id="supporters-title"><span data-i18n="sponsorTitle">Thanks to our supporters</span></h2>
 </div>
-<p style="margin: 0; flex: 1 1 340px; color: #4A5A54; max-width: 46ch">The organisations who walk alongside us, and the volunteers, clients and whānau who make this mahi possible. Ngā mihi nui. Mercy &amp; Natasha</p>
+<p class="section-head-text">The organisations who walk alongside us, and the volunteers, clients and whānau who make this mahi possible. Ngā mihi nui. Mercy &amp; Natasha</p>
 </div>
-<ul data-reveal-group style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 20px">
-<li style="background: #FFFFFF; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 14px; border: 1px solid #D3DFDA">
-<div style="height: 120px; display: flex; align-items: center; justify-content: flex-start"><img width="310" height="100" loading="lazy" decoding="async" src="images/sponsors/breath-infusion-nz.png" alt="Breath Infusion NZ logo" style="max-width: 100%; max-height: 100%; object-fit: contain"></div>
-<h3 style="margin: 0; font-family: var(--display); font-weight: 700; font-size: 22px">Breath Infusion NZ</h3>
-<p style="margin: 0; color: #4A5A54; font-size: 16px">Generously donates the 9D breathwork system used in our Rangatahi programmes and week-long connection retreats, teaching self and emotional regulation.</p>
+<ul class="supporter-grid" data-reveal-group>
+<li class="supporter-card">
+<div class="supporter-logo"><img class="supporter-logo-img" width="310" height="100" loading="lazy" decoding="async" src="images/sponsors/breath-infusion-nz.png" alt="Breath Infusion NZ logo"></div>
+<h3 class="card-title">Breath Infusion NZ</h3>
+<p class="card-text">Generously donates the 9D breathwork system used in our Rangatahi programmes and week-long connection retreats, teaching self and emotional regulation.</p>
 </li>
-<li style="background: #FFFFFF; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 14px; border: 1px solid #D3DFDA">
-<div style="height: 120px; display: flex; align-items: center; justify-content: flex-start"><img width="190" height="162" loading="lazy" decoding="async" src="images/sponsors/waiariki-womens-refuge.png" alt="Waiariki Women’s Refuge logo" style="max-width: 100%; max-height: 100%; object-fit: contain"></div>
-<h3 style="margin: 0; font-family: var(--display); font-weight: 700; font-size: 22px">Waiariki Women’s Refuge</h3>
-<p style="margin: 0; color: #4A5A54; font-size: 16px">Supports vulnerable wāhine and their tamariki on the journey to safer, healthier lives. Thank you for welcoming what we have to offer into your programmes.</p>
+<li class="supporter-card">
+<div class="supporter-logo"><img class="supporter-logo-img" width="190" height="162" loading="lazy" decoding="async" src="images/sponsors/waiariki-womens-refuge.png" alt="Waiariki Women’s Refuge logo"></div>
+<h3 class="card-title">Waiariki Women’s Refuge</h3>
+<p class="card-text">Supports vulnerable wāhine and their tamariki on the journey to safer, healthier lives. Thank you for welcoming what we have to offer into your programmes.</p>
 </li>
-<li style="background: #FFFFFF; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 14px; border: 1px solid #D3DFDA">
-<div style="height: 120px; display: flex; align-items: center; justify-content: flex-start"><img width="278" height="84" loading="lazy" decoding="async" src="images/sponsors/papatuanuku-support-services.png" alt="Papatūānuku Support Services logo" style="max-width: 100%; max-height: 100%; object-fit: contain"></div>
-<h3 style="margin: 0; font-family: var(--display); font-weight: 700; font-size: 22px">Papatūānuku Support Services</h3>
-<p style="margin: 0; color: #4A5A54; font-size: 16px">A Rotorua community service running youth and outreach programmes, who sometimes refer rangatahi to us. Thank you for your mahi in our wider community.</p>
+<li class="supporter-card">
+<div class="supporter-logo"><img class="supporter-logo-img" width="278" height="84" loading="lazy" decoding="async" src="images/sponsors/papatuanuku-support-services.png" alt="Papatūānuku Support Services logo"></div>
+<h3 class="card-title">Papatūānuku Support Services</h3>
+<p class="card-text">A Rotorua community service running youth and outreach programmes, who sometimes refer rangatahi to us. Thank you for your mahi in our wider community.</p>
 </li>
 </ul>
-<div data-reveal style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; padding: 32px 36px; border-radius: 6px; background: #0F7A82; color: #FFFFFF">
-<div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 6px">
-<h3 style="margin: 0; font-family: var(--display); font-weight: 700; font-size: 26px"><span data-i18n="sponsorCtaTitle">Every little bit counts</span></h3>
-<p style="margin: 0; color: #FFFFFF"><span data-i18n="sponsorCtaBody">Donations of time, money, items or skills help fund places in our programmes for the young people who need them most.</span></p>
+<div class="support-cta" data-reveal>
+<div class="support-cta-text">
+<h3 class="card-title-lg"><span data-i18n="sponsorCtaTitle">Every little bit counts</span></h3>
+<p class="support-cta-body"><span data-i18n="sponsorCtaBody">Donations of time, money, items or skills help fund places in our programmes for the young people who need them most.</span></p>
 </div>
-<a href="mailto:shadowhawkequine@gmail.com?subject=Supporting%20Shadowhawk%20Equine" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #FFFFFF; color: #0F5F66; text-decoration: none; font-weight: 700"><span data-i18n="sponsorCta">Offer your support</span></a>
+<a class="support-cta-button" href="mailto:shadowhawkequine@gmail.com?subject=Supporting%20Shadowhawk%20Equine"><span data-i18n="sponsorCta">Offer your support</span></a>
 </div>
 </div>
 </section>
@@ -553,39 +553,39 @@
 </main>
 
 <!-- FOOTER -->
-<footer style="background: #16302A; color: #B9C7C1">
-<div style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 40px; display: flex; flex-direction: column; gap: 48px">
-<div style="display: flex; flex-wrap: wrap; gap: 40px 56px">
-<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
-<div style="display: flex; align-items: center; gap: 12px">
-<img width="208" height="210" loading="lazy" decoding="async" src="images/logo.jpg" alt="" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; background: #FFFFFF">
-<span style="font-family: var(--display); font-weight: 700; font-size: 20px; color: #F3F2EC">Shadowhawk Equine</span>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-cols">
+<div class="footer-brand">
+<div class="footer-logo-row">
+<img class="footer-logo" width="208" height="210" loading="lazy" decoding="async" src="images/logo.jpg" alt="">
+<span class="footer-brand-name">Shadowhawk Equine</span>
 </div>
-<p style="margin: 0; font-size: 15px; max-width: 32ch">Above all else, we seek connection. Equine-assisted learning and therapy in Rotorua since 2014.</p>
-<div style="display: flex; gap: 10px">
-<a href="https://www.facebook.com/shadowhawkequine/" aria-label="Facebook" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #3E5C53; color: #F3F2EC; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-<a href="https://www.instagram.com/shadowhawkequine/" aria-label="Instagram" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #3E5C53; color: #F3F2EC; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6"></circle></svg></a>
-<a href="https://www.tiktok.com/@shadowhawk_equine" aria-label="TikTok" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #3E5C53; color: #F3F2EC; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"></path><path d="M14 3c.5 2.8 2.4 4.6 5 5"></path></svg></a>
+<p class="footer-tagline">Above all else, we seek connection. Equine-assisted learning and therapy in Rotorua since 2014.</p>
+<div class="footer-social">
+<a class="footer-social-link" href="https://www.facebook.com/shadowhawkequine/" aria-label="Facebook"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+<a class="footer-social-link" href="https://www.instagram.com/shadowhawkequine/" aria-label="Instagram"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6"></circle></svg></a>
+<a class="footer-social-link" href="https://www.tiktok.com/@shadowhawk_equine" aria-label="TikTok"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"></path><path d="M14 3c.5 2.8 2.4 4.6 5 5"></path></svg></a>
 </div>
 </div>
-<div style="flex: 0 1 180px; display: flex; flex-direction: column; gap: 10px; font-size: 15px">
-<p style="margin: 0 0 4px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8FD3CD"><span data-i18n="explore">Explore</span></p>
-<a href="#programmes" style="color: #D9E3DF; text-decoration: none"><span data-i18n="lessons">Programmes</span></a>
-<a href="#about" style="color: #D9E3DF; text-decoration: none"><span data-i18n="about">Our story</span></a>
-<a href="#team" style="color: #D9E3DF; text-decoration: none"><span data-i18n="trainers">Our team</span></a>
-<a href="#herd" style="color: #D9E3DF; text-decoration: none"><span data-i18n="herd">The herd</span></a>
-<a href="#supporters" style="color: #D9E3DF; text-decoration: none"><span data-i18n="supportersNav">Supporters</span></a>
-<a href="#contact" style="color: #D9E3DF; text-decoration: none"><span data-i18n="contact">Contact</span></a>
+<div class="footer-col">
+<p class="footer-heading"><span data-i18n="explore">Explore</span></p>
+<a class="footer-link" href="#programmes"><span data-i18n="lessons">Programmes</span></a>
+<a class="footer-link" href="#about"><span data-i18n="about">Our story</span></a>
+<a class="footer-link" href="#team"><span data-i18n="trainers">Our team</span></a>
+<a class="footer-link" href="#herd"><span data-i18n="herd">The herd</span></a>
+<a class="footer-link" href="#supporters"><span data-i18n="supportersNav">Supporters</span></a>
+<a class="footer-link" href="#contact"><span data-i18n="contact">Contact</span></a>
 </div>
-<div style="flex: 0 0 auto; display: flex; flex-direction: column; gap: 10px; font-size: 15px">
-<p style="margin: 0 0 4px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8FD3CD"><span data-i18n="contact">Contact</span></p>
-<a href="tel:+6421628274" style="color: #D9E3DF; text-decoration: none">021 628 274</a>
-<a href="mailto:shadowhawkequine@gmail.com" style="color: #D9E3DF; text-decoration: none; overflow-wrap: anywhere">shadowhawkequine@gmail.com</a>
+<div class="footer-col footer-col--auto">
+<p class="footer-heading"><span data-i18n="contact">Contact</span></p>
+<a class="footer-link" href="tel:+6421628274">021 628 274</a>
+<a class="footer-link break-anywhere" href="mailto:shadowhawkequine@gmail.com">shadowhawkequine@gmail.com</a>
 <span>Te Ngae Road, Rotorua</span>
 </div>
-<a href="https://www.google.com/maps/search/?api=1&amp;query=Te+Ngae+Road+Rotorua+New+Zealand" style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; border-radius: 4px; overflow: hidden; background: #E7EFEC; color: #16302A; text-decoration: none; border: 1px solid #3E5C53">
-<div style="position: relative; height: 200px; background: #DDE8E3; overflow: hidden">
-<svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0">
+<a class="footer-map" href="https://www.google.com/maps/search/?api=1&amp;query=Te+Ngae+Road+Rotorua+New+Zealand">
+<div class="footer-map-art">
+<svg class="footer-map-svg" aria-hidden="true" width="100%" height="100%" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice">
 <rect width="400" height="200" fill="#DDE8E3"></rect>
 <path d="M0 150 C 80 140, 120 60, 220 70 S 360 40, 400 30" fill="none" stroke="#C6D6CF" stroke-width="40" stroke-linecap="round"></path>
 <path d="M300 0 L 260 200" fill="none" stroke="#FFFFFF" stroke-width="6"></path>
@@ -595,17 +595,17 @@
 <rect x="30" y="160" width="70" height="30" rx="4" fill="#CFE0D8"></rect>
 <rect x="320" y="150" width="60" height="40" rx="4" fill="#CFE0D8"></rect>
 </svg>
-<div style="position: absolute; left: 50%; top: 46%; transform: translate(-50%, -100%); display: flex; flex-direction: column; align-items: center">
-<span style="width: 44px; height: 44px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: #0F6E74; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(22, 48, 42, 0.3)"><span style="width: 14px; height: 14px; border-radius: 50%; background: #FFFFFF"></span></span>
+<div class="footer-map-pin">
+<span class="footer-map-pin-shape"><span class="footer-map-pin-dot"></span></span>
 </div>
 </div>
-<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 18px">
-<span style="display: flex; flex-direction: column"><span style="font-weight: 600; font-size: 16px">Te Ngae Road, Rotorua</span><span style="font-size: 14px; color: #4A5A54"><span data-i18n="openMaps">Open in Google Maps</span></span></span>
+<div class="footer-map-caption">
+<span class="stack"><span class="footer-map-title">Te Ngae Road, Rotorua</span><span class="small-muted"><span data-i18n="openMaps">Open in Google Maps</span></span></span>
 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"></path></svg>
 </div>
 </a>
 </div>
-<p style="margin: 0; font-size: 14px; padding-top: 20px; border-top: 1px solid #2D4A42">© 2026 Shadowhawk Equine · Te Ngae Road, Rotorua, Aotearoa New Zealand</p>
+<p class="footer-copy">© 2026 Shadowhawk Equine · Te Ngae Road, Rotorua, Aotearoa New Zealand</p>
 </div>
 </footer>
 
