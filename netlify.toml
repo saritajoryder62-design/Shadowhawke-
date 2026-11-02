@@ -1,0 +1,13 @@
+# Netlify settings for the Shadowhawk Equine site.
+# Plain HTML/CSS/JS with no build step, so Netlify just publishes this folder as-is.
+# The enquiry form in index.html is picked up by Netlify Forms automatically at deploy time
+# (form detection must be switched on once in the Netlify dashboard: Forms > Enable form detection).
+
+[build]
+  publish = "."
+
+# The thank-you page is only reached after sending the form; keep it out of search results.
+[[headers]]
+  for = "/thanks.html"
+  [headers.values]
+    X-Robots-Tag = "noindex"
