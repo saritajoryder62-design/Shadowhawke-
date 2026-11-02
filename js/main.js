@@ -96,15 +96,23 @@ const COPY = {
 
 function setLanguage(lang) {
   const strings = COPY[lang] || COPY.en;
-  document.documentElement.lang = lang;
+  // Most of the page (body paragraphs) is English in both modes, so the page stays lang="en"
+  // and each translated string carries its own lang. That way screen readers pronounce the
+  // te reo with a Māori voice and the untranslated English with an English one.
+  document.documentElement.dataset.lang = lang;
 
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const value = strings[el.dataset.i18n];
-    if (value !== undefined) el.textContent = value;
+    if (value === undefined) return;
+    el.textContent = value;
+    // the line under the hero heading sets its own (opposite) language below
+    if (!el.closest('[data-alt-lang]')) el.lang = lang;
   });
   document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
     const value = strings[el.dataset.i18nAriaLabel];
-    if (value !== undefined) el.setAttribute('aria-label', value);
+    if (value === undefined) return;
+    el.setAttribute('aria-label', value);
+    el.lang = lang;
   });
   // the line under the hero heading is always in the *other* language
   document.querySelectorAll('[data-alt-lang]').forEach((el) => {

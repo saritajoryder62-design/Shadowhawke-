@@ -54,6 +54,7 @@
 </head>
 <body>
 <div class="page" style="font-family: var(--body); color: #16302A; background: #F3F2EC; font-size: 17px; line-height: 1.6; width: 100%; min-width: 0">
+<a href="#main" class="skip-link">Skip to content</a>
 
 <!-- BANNER + NAV -->
 <header style="position: sticky; top: 0; z-index: 10; background: rgba(243,242,236,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid #DAD8CE">
@@ -101,6 +102,8 @@
 </nav>
 </header>
 
+<main id="main" tabindex="-1">
+
 <!-- HERO -->
 <section id="top" class="hero">
 <div class="hero-inner">
@@ -146,7 +149,7 @@
 </div>
 <p style="margin: 0; flex: 1 1 340px; color: #4A5A54; max-width: 46ch">Trauma-informed, equine-assisted programmes that build responsibility, emotional regulation, self-awareness, trust, confidence and leadership, at each person’s own pace.</p>
 </div>
-<div data-reveal-group style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px">
+<div data-reveal-group style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr)); gap: 20px">
 
 <article style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid #E4E2D8">
 <img width="310" height="311" loading="lazy" decoding="async" src="images/pony-lesson.jpg" alt="A young rider on a skewbald pony" style="width: 100%; height: 200px; object-fit: cover">
@@ -278,7 +281,7 @@
 <h2 style="margin: 0; font-family: var(--display); font-weight: 500; font-size: clamp(38px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.01em"><span data-i18n="trainersTitle">Meet Mercy & Natasha</span></h2>
 <p style="margin: 0; color: #4A5A54">The people behind Shadowhawk, with training in psychology, counselling and mental health alongside a lifetime with horses.</p>
 </div>
-<div data-reveal-group style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px">
+<div data-reveal-group style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 24px">
 <article style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 24px; padding: 24px; border-radius: 6px; background: #FFFFFF; border: 1px solid #E4E2D8">
 <!-- Waiting on Shadowhawk: swap for a real photo, then remove "hidden" -->
 <div hidden role="img" aria-label="Photo of Mercy Wallace (placeholder)" style="flex: 0 0 180px; height: 220px; border-radius: 4px; background: #DCEDEB; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #0F6E74">
@@ -344,7 +347,7 @@
 </div>
 <p style="margin: 0; flex: 1 1 340px; color: #B9C7C1; max-width: 44ch">Our partners in learning and growth. Every horse here has their own character, and every rider soon has a favourite.</p>
 </div>
-<div data-reveal-group style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
+<div data-reveal-group style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px">
 <article style="display: flex; flex-direction: column; gap: 14px">
 <img width="310" height="624" loading="lazy" decoding="async" src="images/philli.jpg" alt="Philli, a dark bay horse in a rope halter" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px">
 <div style="display: flex; flex-direction: column; gap: 4px">
@@ -384,7 +387,7 @@
 <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0F6E74"><span data-i18n="newRider">New to equiNZone?</span></p>
 <h2 id="first-lesson" style="margin: 0; font-family: var(--display); font-weight: 500; font-size: clamp(38px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.01em"><span data-i18n="firstTitle">Your first lesson, step by step</span></h2>
 </div>
-<ol data-reveal-group style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
+<ol data-reveal-group style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px">
 <li style="background: #FFFFFF; border: 1px solid #E4E2D8; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
 <span style="font-family: var(--display); font-weight: 800; font-size: 40px; line-height: 1; color: #0F6E74">01</span>
 <h3 style="margin: 0; font-family: var(--display); font-weight: 700; font-size: 22px">Let’s talk</h3>
@@ -483,7 +486,7 @@
 <input id="f-name" name="name" type="text" autocomplete="name" required style="min-height: 48px; padding: 0 14px; border: 1px solid #B9B7AC; border-radius: 4px; font: inherit; background: #FBFAF6; min-width: 0">
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
-<label for="f-phone" style="font-size: 15px; font-weight: 600">Phone</label>
+<label for="f-phone" style="font-size: 15px; font-weight: 600">Phone <span class="field-optional">(optional)</span></label>
 <input id="f-phone" name="phone" type="tel" autocomplete="tel" style="min-height: 48px; padding: 0 14px; border: 1px solid #B9B7AC; border-radius: 4px; font: inherit; background: #FBFAF6; min-width: 0">
 </div>
 <div style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px">
@@ -502,7 +505,7 @@
 </select>
 </div>
 <div style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px">
-<label for="f-msg" style="font-size: 15px; font-weight: 600">Tell us a little more</label>
+<label for="f-msg" style="font-size: 15px; font-weight: 600">Tell us a little more <span class="field-optional">(optional)</span></label>
 <textarea id="f-msg" name="message" rows="4" placeholder="Age, experience, anything we should know" style="padding: 12px 14px; border: 1px solid #B9B7AC; border-radius: 4px; font: inherit; background: #FBFAF6; resize: vertical"></textarea>
 </div>
 <button type="submit" style="grid-column: 1 / -1; justify-self: start; min-height: 52px; padding: 0 32px; border: 0; border-radius: 999px; background: var(--accent); color: #FFFFFF; font: inherit; font-weight: 600; cursor: pointer"><span data-i18n="send">Send enquiry</span></button>
@@ -520,7 +523,7 @@
 </div>
 <p style="margin: 0; flex: 1 1 340px; color: #4A5A54; max-width: 46ch">The organisations who walk alongside us, and the volunteers, clients and whānau who make this mahi possible. Ngā mihi nui. Mercy &amp; Natasha</p>
 </div>
-<ul data-reveal-group style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+<ul data-reveal-group style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 20px">
 <li style="background: #FFFFFF; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 14px; border: 1px solid #D3DFDA">
 <div style="height: 120px; display: flex; align-items: center; justify-content: flex-start"><img width="310" height="100" loading="lazy" decoding="async" src="images/sponsors/breath-infusion-nz.png" alt="Breath Infusion NZ logo" style="max-width: 100%; max-height: 100%; object-fit: contain"></div>
 <h3 style="margin: 0; font-family: var(--display); font-weight: 700; font-size: 22px">Breath Infusion NZ</h3>
@@ -540,12 +543,14 @@
 <div data-reveal style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; padding: 32px 36px; border-radius: 6px; background: #0F7A82; color: #FFFFFF">
 <div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 6px">
 <h3 style="margin: 0; font-family: var(--display); font-weight: 700; font-size: 26px"><span data-i18n="sponsorCtaTitle">Every little bit counts</span></h3>
-<p style="margin: 0; color: #E3F2F1"><span data-i18n="sponsorCtaBody">Donations of time, money, items or skills help fund places in our programmes for the young people who need them most.</span></p>
+<p style="margin: 0; color: #FFFFFF"><span data-i18n="sponsorCtaBody">Donations of time, money, items or skills help fund places in our programmes for the young people who need them most.</span></p>
 </div>
 <a href="mailto:shadowhawkequine@gmail.com?subject=Supporting%20Shadowhawk%20Equine" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #FFFFFF; color: #0F5F66; text-decoration: none; font-weight: 700"><span data-i18n="sponsorCta">Offer your support</span></a>
 </div>
 </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer style="background: #16302A; color: #B9C7C1">
