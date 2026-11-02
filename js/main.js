@@ -1,0 +1,127 @@
+// Shadowhawk Equine: English / Te Reo Māori toggle
+// Every element with data-i18n="key" gets its text from COPY[lang][key].
+// Elements with data-i18n-aria-label="key" get their aria-label swapped.
+
+const COPY = {
+  "en": {
+    "lessons": "Programmes",
+    "about": "Our story",
+    "trainers": "Our team",
+    "herd": "The herd",
+    "supportersNav": "Supporters",
+    "book": "Book a lesson",
+    "heroEyebrow": "Te Ngae Road, Rotorua · Since 2014",
+    "heroTitle": "Above all else, we seek connection.",
+    "heroAlt": "I runga ake i ngā mea katoa, e rapu hononga ana mātou.",
+    "heroSub": "Equine-assisted learning, therapy and riding programmes in Rotorua for tamariki, rangatahi and adults.",
+    "seeProgrammes": "Explore programmes",
+    "meetHerd": "Meet the herd",
+    "call": "Or call us on",
+    "purpose": "Our purpose",
+    "mission": "“To foster holistic growth and healing through the transformative connection between horses and people.”",
+    "missionLabel": "Our mission",
+    "missionShort": "Holistic wellness through horses and mindfulness.",
+    "offer": "What we offer",
+    "offerTitle": "Programmes that grow confidence and connection",
+    "comingSoon": "In development",
+    "aboutTitle": "Our untold story",
+    "trainersTitle": "Meet Mercy & Natasha",
+    "herdTitle": "Four legs, big personalities",
+    "galleryEyebrow": "Gallery",
+    "galleryTitle": "Life at Shadowhawk",
+    "galleryMore": "More on Instagram",
+    "newRider": "New to equiNZone?",
+    "firstTitle": "Your first lesson, step by step",
+    "contact": "Contact",
+    "contactTitle": "Let’s talk",
+    "send": "Send enquiry",
+    "follow": "Follow the herd",
+    "socialTitle": "Follow the herd online",
+    "explore": "Explore",
+    "openMaps": "Open in Google Maps",
+    "sponsorEyebrow": "Gratitude",
+    "sponsorTitle": "Thanks to our supporters",
+    "sponsorCtaTitle": "Every little bit counts",
+    "sponsorCtaBody": "Donations of time, money, items or skills help fund places in our programmes for the young people who need them most.",
+    "sponsorCta": "Offer your support",
+    "banner": "Lessons now open · Only 2 spots left · Mondays 4pm–6pm",
+    "bannerCta": "Book now"
+  },
+  "mi": {
+    "lessons": "Ngā kaupapa",
+    "about": "Tā mātou kōrero",
+    "trainers": "Tā mātou rōpū",
+    "herd": "Ngā hōiho",
+    "supportersNav": "Ngā kaitautoko",
+    "book": "Tono akoranga",
+    "heroEyebrow": "Te Ngae Road, Rotorua · Mai i te 2014",
+    "heroTitle": "I runga ake i ngā mea katoa, e rapu hononga ana mātou.",
+    "heroAlt": "Above all else, we seek connection.",
+    "heroSub": "He akoranga, he haumanu, he kaupapa eke hōiho ki Rotorua mō ngā tamariki, rangatahi me ngā pakeke.",
+    "seeProgrammes": "Tirohia ngā kaupapa",
+    "meetHerd": "Tūtaki ki ngā hōiho",
+    "call": "Waea mai rānei ki",
+    "purpose": "Tō mātou kaupapa",
+    "mission": "“Kia tipu, kia ora te tangata, mā te hononga i waenga i te hōiho me te tangata.”",
+    "missionLabel": "Tō mātou whakatakanga",
+    "missionShort": "Te oranga tonu mā te hōiho me te ngākau māhaki.",
+    "offer": "Ā mātou ratonga",
+    "offerTitle": "He kaupapa hei whakatipu i te māia me te hononga",
+    "comingSoon": "Kei te whakawhanakehia",
+    "aboutTitle": "Tā mātou kōrero huna",
+    "trainersTitle": "Tūtaki ki a Mercy rāua ko Natasha",
+    "herdTitle": "He āhua motuhake tō ia hōiho",
+    "galleryEyebrow": "Ngā whakaahua",
+    "galleryTitle": "Te noho ki Shadowhawk",
+    "galleryMore": "He maha atu ki Instagram",
+    "newRider": "He tauhou ki equiNZone?",
+    "firstTitle": "Tō akoranga tuatahi",
+    "contact": "Whakapā mai",
+    "contactTitle": "Me kōrero tāua",
+    "send": "Tukuna",
+    "follow": "Whai mai i a mātou",
+    "socialTitle": "Whai mai i ā mātou hōiho",
+    "explore": "Tirohia",
+    "openMaps": "Whakatuwheratia ki Google Maps",
+    "sponsorEyebrow": "He mihi",
+    "sponsorTitle": "Ngā mihi ki ā mātou kaitautoko",
+    "sponsorCtaTitle": "Ahakoa he iti, he pounamu",
+    "sponsorCtaBody": "Mā ō koha wā, moni, taonga, pūkenga rānei e tautoko ngā wāhi mō ngā rangatahi e matea ana.",
+    "sponsorCta": "Tautoko mai",
+    "banner": "Kua tuwhera ngā akoranga · E 2 noa ngā wāhi · Ngā Rāhina 4pm–6pm",
+    "bannerCta": "Tono mai"
+  }
+};
+
+function setLanguage(lang) {
+  const strings = COPY[lang] || COPY.en;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const value = strings[el.dataset.i18n];
+    if (value !== undefined) el.textContent = value;
+  });
+  document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
+    const value = strings[el.dataset.i18nAriaLabel];
+    if (value !== undefined) el.setAttribute('aria-label', value);
+  });
+  // the line under the hero heading is always in the *other* language
+  document.querySelectorAll('[data-alt-lang]').forEach((el) => {
+    el.lang = lang === 'mi' ? 'en' : 'mi';
+  });
+  document.querySelectorAll('.lang-btn').forEach((btn) => {
+    const active = btn.dataset.setLang === lang;
+    btn.classList.toggle('is-active', active);
+    btn.setAttribute('aria-pressed', String(active));
+  });
+  try { localStorage.setItem('shq-lang', lang); } catch (e) { /* storage blocked: ignore */ }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.lang-btn').forEach((btn) => {
+    btn.addEventListener('click', () => setLanguage(btn.dataset.setLang));
+  });
+  let saved = 'en';
+  try { saved = localStorage.getItem('shq-lang') || 'en'; } catch (e) { /* ignore */ }
+  if (saved !== 'en') setLanguage(saved);
+});

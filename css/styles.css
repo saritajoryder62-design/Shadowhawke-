@@ -1,0 +1,41 @@
+/* Shadowhawk Equine: base styles
+   Most layout still lives in inline style="" attributes (exported from the design canvas).
+   See CLAUDE.md: moving them into classes here is one of the handoff tasks. */
+
+:root {
+  --accent: #0F6E74;      /* teal from the logo: buttons */
+  --banner: #0F7A82;      /* scrolling banner */
+  --pine: #16302A;        /* dark sections, text */
+  --ground: #F3F2EC;      /* page background */
+  --mist: #E7EFEC;        /* light green sections */
+  --muted: #4A5A54;       /* secondary text */
+  --leather: #8C4F2B;     /* small labels */
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 130px; }
+*, *::before, *::after { box-sizing: border-box; }
+img { max-width: 100%; }
+
+body{margin:0;background:var(--ground)}
+a{color:#0F6E74}a:hover{color:#0A5257}
+@keyframes shq-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-track{animation:shq-marquee 30s linear infinite}
+.marquee:hover .marquee-track,.marquee:focus-visible .marquee-track{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){.marquee-track{animation:none}}
+.hero-bg{background-color:#16302A;background-image:url(../images/paddock-roundup.jpg);background-size:cover;background-position:center 60%}
+
+/* language toggle */
+.lang-btn {
+  min-height: 40px; padding: 0 14px; border: 0; border-radius: 999px;
+  font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;
+  background: transparent; color: var(--pine);
+}
+.lang-btn.is-active { background: var(--pine); color: #FFFFFF; }
+
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid #8FD3CD; outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
