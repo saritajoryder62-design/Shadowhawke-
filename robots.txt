@@ -1,0 +1,7 @@
+# Allow all search engines to crawl the whole site.
+# (thanks.html is kept out of results by its noindex tag, which crawlers need to be able to read.)
+User-agent: *
+Allow: /
+
+# TODO when the domain is live: create sitemap.xml and add its full address here, e.g.
+# Sitemap: https://YOUR-DOMAIN/sitemap.xml

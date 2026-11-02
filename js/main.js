@@ -44,6 +44,7 @@ const COPY = {
     "sponsorCtaTitle": "Every little bit counts",
     "sponsorCtaBody": "Donations of time, money, items or skills help fund places in our programmes for the young people who need them most.",
     "sponsorCta": "Offer your support",
+    // Scrolling banner: change the wording here (and in "mi" below). index.html picks it up.
     "banner": "Lessons now open · Only 2 spots left · Mondays 4pm–6pm",
     "bannerCta": "Book now"
   },
@@ -95,15 +96,23 @@ const COPY = {
 
 function setLanguage(lang) {
   const strings = COPY[lang] || COPY.en;
-  document.documentElement.lang = lang;
+  // Most of the page (body paragraphs) is English in both modes, so the page stays lang="en"
+  // and each translated string carries its own lang. That way screen readers pronounce the
+  // te reo with a Māori voice and the untranslated English with an English one.
+  document.documentElement.dataset.lang = lang;
 
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const value = strings[el.dataset.i18n];
-    if (value !== undefined) el.textContent = value;
+    if (value === undefined) return;
+    el.textContent = value;
+    // the line under the hero heading sets its own (opposite) language below
+    if (!el.closest('[data-alt-lang]')) el.lang = lang;
   });
   document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
     const value = strings[el.dataset.i18nAriaLabel];
-    if (value !== undefined) el.setAttribute('aria-label', value);
+    if (value === undefined) return;
+    el.setAttribute('aria-label', value);
+    el.lang = lang;
   });
   // the line under the hero heading is always in the *other* language
   document.querySelectorAll('[data-alt-lang]').forEach((el) => {
@@ -115,13 +124,111 @@ function setLanguage(lang) {
     btn.setAttribute('aria-pressed', String(active));
   });
   try { localStorage.setItem('shq-lang', lang); } catch (e) { /* storage blocked: ignore */ }
+  fitNav(); // te reo labels are longer, so the nav may need to collapse (or expand) again
+}
+
+// ---------- Header menu ----------
+// The full nav shows when it fits on one row. When it doesn't (phones, or te reo on a smaller
+// laptop) html gets the "nav-compact" class and the links move behind the Menu button.
+let fitNav = () => {};
+
+function setupNav() {
+  const root = document.documentElement;
+  const nav = document.querySelector('.site-nav');
+  if (!nav) return;
+  const toggle = nav.querySelector('.menu-toggle');
+  const menu = nav.querySelector('.nav-menu');
+
+  const isOpen = () => nav.classList.contains('is-open');
+  function setOpen(open) {
+    nav.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+  }
+
+  fitNav = () => {
+    root.classList.remove('nav-compact');
+    const items = [
+      nav.querySelector('.brand'),
+      ...menu.querySelector('.nav-links').children,
+      menu.querySelector('.lang-toggle'),
+      menu.querySelector('.nav-cta'),
+    ];
+    const middle = (el) => { const r = el.getBoundingClientRect(); return r.top + r.height / 2; };
+    const row = middle(items[0]);
+    const fits = items.every((el) => Math.abs(middle(el) - row) < 12);
+    root.classList.toggle('nav-compact', !fits);
+    if (fits) setOpen(false);
+  };
+
+  toggle.addEventListener('click', () => setOpen(!isOpen()));
+
+  // close after choosing a link, on Escape, or on a click anywhere outside the nav
+  menu.addEventListener('click', (e) => {
+    if (e.target.closest('a') && root.classList.contains('nav-compact')) setOpen(false);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen()) { setOpen(false); toggle.focus(); }
+  });
+  document.addEventListener('click', (e) => {
+    if (isOpen() && !nav.contains(e.target)) setOpen(false);
+  });
+
+  // only re-measure when the width changes (phones fire resize as the address bar hides)
+  let lastWidth = window.innerWidth;
+  window.addEventListener('resize', () => {
+    if (window.innerWidth === lastWidth) return;
+    lastWidth = window.innerWidth;
+    requestAnimationFrame(fitNav);
+  });
+  if (document.fonts) document.fonts.ready.then(fitNav);
+  fitNav();
+}
+
+// ---------- Enquire / Book buttons pre-select the programme in the contact form ----------
+function setupProgrammeLinks() {
+  const select = document.getElementById('f-type');
+  if (!select) return;
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('[data-programme]');
+    if (!link) return;
+    const match = [...select.options].find((option) => option.value === link.dataset.programme);
+    if (match) select.value = match.value;
+  });
+}
+
+// ---------- Scrolling banner ----------
+// index.html holds one banner item; repeat it to fill the strip. The animation slides the strip
+// left by half its width, so it needs an even number of identical copies.
+function setupBanner() {
+  const banner = document.querySelector('.banner');
+  if (!banner) return;
+  const track = banner.querySelector('.marquee-track');
+  const item = track.querySelector('.marquee-item');
+  for (let i = 1; i < 8; i++) track.appendChild(item.cloneNode(true));
+
+  // pause / play, remembered between visits
+  const toggle = banner.querySelector('.banner-toggle');
+  const setPaused = (paused) => {
+    banner.classList.toggle('is-paused', paused);
+    toggle.setAttribute('aria-pressed', String(paused));
+    try { localStorage.setItem('shq-banner-paused', paused ? '1' : '0'); } catch (e) { /* ignore */ }
+  };
+  let paused = false;
+  try { paused = localStorage.getItem('shq-banner-paused') === '1'; } catch (e) { /* ignore */ }
+  setPaused(paused);
+  toggle.hidden = false;
+  toggle.addEventListener('click', () => setPaused(toggle.getAttribute('aria-pressed') !== 'true'));
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  setupBanner();
+  setupNav();
+  setupProgrammeLinks();
   document.querySelectorAll('.lang-btn').forEach((btn) => {
     btn.addEventListener('click', () => setLanguage(btn.dataset.setLang));
   });
   let saved = 'en';
   try { saved = localStorage.getItem('shq-lang') || 'en'; } catch (e) { /* ignore */ }
-  if (saved !== 'en') setLanguage(saved);
+  // always apply, so the banner and every other translated string come from COPY above
+  setLanguage(saved);
 });
